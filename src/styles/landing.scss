@@ -1,0 +1,90 @@
+@import "./variables.scss";
+
+.landing {
+  width: 100%;
+  header.header {
+    width: calc(100% - 100px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 50px;
+    background-color: $gsectblue;
+    .menu {
+      display: flex;
+      justify-content: flex-start;
+      img {
+        width: 70px;
+        height: 24px;
+        margin-right: 60px;
+      }
+      .links {
+        .link {
+          text-decoration: none;
+          color: $white;
+          font-weight: $font-medium;
+          margin-right: 40px;
+          &:active, &:visited, &:hover {
+            color: $gsectyellow;
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 632px;
+    width: 100%;
+    background: linear-gradient(to right, $white, #FFF6E4);
+    .content {
+      padding-left: 50px;
+      width: 48%;
+      h1.title {
+        margin-top: 72px;
+        font-size: 54px;
+        color: $gsectblue;
+        font-weight: $weight-bold;
+      }
+      p.subtitle {
+        margin-bottom: 40px;
+        color: $gsectblue;
+        line-height: 24px;
+        width: 65%;
+      }
+      .actions {
+        display: flex;
+        justify-content: flex-start;
+        gap: 8px;
+      }
+      .right-top-left {
+        position: absolute;
+        top: 66px;
+        left: 20px;
+        width: 80px;
+        height: 60px;
+      }
+    }
+    .banner-image {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      .banner-img {
+        position: absolute;
+        top: 32px;
+        width: 100%;
+        height: auto;
+        right: 0;
+        z-index: 9;
+      }
+      .right-bottom-right {
+        position: absolute;
+        right: 60px;
+        bottom: 32px;
+        z-index: 1;
+      }
+    }
+  }
+}

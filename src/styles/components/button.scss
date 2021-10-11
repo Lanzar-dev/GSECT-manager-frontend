@@ -1,0 +1,18 @@
+@import "../variables.scss";
+
+.gsect-button {
+  border: none;
+  background: $white;
+  border-radius: 4px;
+  width: 220px;
+  height: 48px;
+  color: $gsectblue;
+  &.inverted {
+    background-color: $gsectblue;
+    color: $white;
+  }
+  &.secondary {
+    background-color: transparent;
+    border: 1px solid $gsectblue;
+  }
+}
