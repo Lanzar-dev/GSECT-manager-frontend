@@ -1,0 +1,51 @@
+@import "./Variables.scss";
+
+// @font-face {
+//   font-family: "Graphik";
+//   font-weight: 500;
+//   src: local("Graphik"),
+//     url("../assets/fonts/HelveticaNueue.otf") format("OpenType");
+// }
+
+// @font-face {
+//   font-family: "Graphik";
+//   font-weight: normal;
+//   src: local("Graphik"),
+//     url("../assets/fonts/GraphikRegular.otf") format("OpenType");
+// }
+// @font-face {
+//   font-family: "iLato";
+//   font-weight: 600;
+//   src: local("iLato"), url("../assets/fonts/Lato-Bold.ttf") format("TrueType");
+// }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: rgba(6, 0, 57, 0.7);
+  position: relative;
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+select,
+radio {
+  outline: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
