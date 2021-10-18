@@ -66,6 +66,7 @@
         width: 80px;
         height: 60px;
       }
+      
     }
     .banner-image {
       position: relative;
@@ -87,4 +88,51 @@
       }
     }
   }
+  .intro{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    height: 632px;
+    width: 100%;
+    background-color: $white;
+      .intro-container{
+        position: relative;
+        width: 50%;
+        height: 100%;
+          .top-left-top{
+            position: absolute;
+            left: 153px;
+            bottom: calc(442px - 58px);
+            z-index: 1;
+            position: absolute;
+            width: 372px;
+            height: 275px;
+          }
+          .intro-img{
+            position: absolute;
+            top: 32px;
+            width: 445.58px;
+            height: 577px;
+            right: 0;
+            z-index: 0;
+          }
+      }
+      .intro-actions{
+        display: block;
+        justify-content: center;
+        align-items: center;
+          .intro-list{
+            display: block;
+            justify-content: center;
+             .list{
+               display: flex;
+               justify-content: space-between;
+               flex-wrap: wrap;
+             }
+          }
+
+      }
+  }
 }
+
