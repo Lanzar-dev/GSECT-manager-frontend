@@ -62,32 +62,6 @@ export default function Landing() {
               type="secondary"
               action={() => setOpenModal(true)}
             />
-            <Modal
-              isOpen={openModal}
-              onRequestClose={() => setOpenModal(false)}
-              className="login-popup"
-            >
-              <div className="modalDiv">
-                <div className="modalTitle">
-                  <h3>Log In</h3>
-                  <p>Access your free profile.</p>
-                </div>
-                <div className="closeBtn">
-                  <button onClick={() => setOpenModal(false)}>X</button>
-                </div>
-              </div>
-              <div className="formDiv">
-                <div className="extra">
-                  <Button type="secondary" label="Continue with Google" />
-                  <Button type="inverted" label="Continue with Facebook" />
-                </div>
-
-                <div className="loginDetails">
-                  <input type="text" />
-                  <input type="password" />
-                </div>
-              </div>
-            </Modal>
           </div>
         </div>
 
@@ -102,6 +76,121 @@ export default function Landing() {
             src={require("../assets/images/banner-img.png").default}
             alt="gsect dashboard"
           />
+        </div>
+      </section>
+      {/* section-two */}
+      <section className="sub">
+        <div className="sub-image">
+          <img
+            className="left-top-left"
+            src={require("../assets/images/medium-ring.png").default}
+            alt="gsect dashboard"
+          />
+          <img
+            className="sub-img"
+            src={require("../assets/images/gsect-boy.png").default}
+            alt="gsect dashboard"
+          />
+          <img
+            className="bottom-right"
+            src={require("../assets/images/small-ring.png").default}
+            alt="gsect dashboard"
+          />
+        </div>
+
+        <div className="sub-content">
+          <h1 className="title">Manage your subscriptions in one place</h1>
+
+          <div className="subtitle">
+            <div className="choices">
+              <div className="choices-img">
+                <img
+                  src={require("../assets/images/tool-box.png").default}
+                  alt=""
+                />
+              </div>
+              <div className="choices-content">
+                <h3>Create ubscriptions</h3>
+                <p>
+                  Enable access to your email address to automatically add
+                  subscriptions or add it manually.
+                </p>
+              </div>
+            </div>
+            <div className="choices">
+              <div className="choices-img">
+                <img
+                  src={require("../assets/images/track.png").default}
+                  alt=""
+                />
+              </div>
+              <div className="choices-content">
+                <h3>Track subscriptions</h3>
+                <p>
+                  View all the details of your current, paused and ended
+                  subscriptions. Stay updated.
+                </p>
+              </div>
+            </div>
+            <div className="choices">
+              <div className="choices-img">
+                <img
+                  src={require("../assets/images/tool-box.png").default}
+                  alt=""
+                />
+              </div>
+              <div className="choices-content">
+                <h3>Everything in one place</h3>
+                <p>
+                  Pause and end your subscriptions easily in a few clicks.
+                  Review your hostory & expenses analysis.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="actions">
+            <Button
+              label="Get started"
+              type="inverted"
+              action={() => console.log("test 123")}
+            />
+            <Modal
+              isOpen={openModal}
+              onRequestClose={() => setOpenModal(false)}
+              className="login-popup"
+              style={{
+                overlay: {
+                  zIndex: 5,
+                  background: "#0000004f",
+                },
+              }}
+            >
+              <div className="modalHead">
+                <div className="modalTitle">
+                  <h3>Log In</h3>
+                  <p>Access your free profile.</p>
+                </div>
+                <div className="closeBtn">
+                  <img
+                    onClick={() => setOpenModal(false)}
+                    src={require("../assets/images/close.png").default}
+                    alt="exit-popup"
+                  />
+                </div>
+              </div>
+              <div className="formDiv">
+                <div className="formBtn">
+                  <Button type="secondary" label="Continue with Google" />
+                  <Button type="inverted" label="Continue with Facebook" />
+                </div>
+
+                <div className="loginDetails">
+                  <input className="email" type="email" />
+                  <input className="password" type="password" />
+                </div>
+              </div>
+            </Modal>
+          </div>
         </div>
       </section>
     </div>
