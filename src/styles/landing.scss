@@ -88,51 +88,79 @@
       }
     }
   }
-  .intro{
+  .sub{
     display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
     height: 632px;
     width: 100%;
-    background-color: $white;
-      .intro-container{
-        position: relative;
-        width: 50%;
-        height: 100%;
-          .top-left-top{
-            position: absolute;
-            left: 153px;
-            bottom: calc(442px - 58px);
-            z-index: 1;
-            position: absolute;
-            width: 372px;
-            height: 275px;
+    background: $white;
+    .sub-image{
+      position: relative;
+      width: 50%;
+      height: 100%;
+        .left-top-left{
+          left: 112px;
+          top: 58px;
+          z-index: 1;
+          position: relative;
+        }
+        .sub-img{
+          width: 445.58px;
+          height: 577px;
+          left: 153;
+          bottom: 99;
+        }
+        .bottom-right{
+          top: 0;
+          bottom: 49px;
+          right: 888px;
+          z-index: 1;
+          position: relative;
+        }
+    }
+    .sub-content{
+      position: absolute;
+      width: 533px;
+      height: 577px;
+      left: 778px;
+      top: 89px;
+        h1.title{
+          font-weight: bold;
+          font-size: 39px;
+          line-height: 45px;
+          color: $gsectblue;
+        }
+        .subtitle{
+          .choices {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 466px;
+            height: 80px;
+            left: 780px;
+            top: 239px;
+            margin-bottom: 20px;
+            .choices-img{
+              background-color: $gsectyellow;
+              position: relative;
+              padding: 14px;
+              border-radius: 100%;
+              width: 24.89px;
+              height: 22px;
+            }
+            .choices-content{
+              width: 382px;
+              height: 80px;
+                h3, p{
+                  margin: 0;
+                }
+                
+            }
           }
-          .intro-img{
-            position: absolute;
-            top: 32px;
-            width: 445.58px;
-            height: 577px;
-            right: 0;
-            z-index: 0;
-          }
-      }
-      .intro-actions{
-        display: block;
-        justify-content: center;
-        align-items: center;
-          .intro-list{
-            display: block;
-            justify-content: center;
-             .list{
-               display: flex;
-               justify-content: space-between;
-               flex-wrap: wrap;
-             }
-          }
-
-      }
+        }
+    }
   }
 }
 
