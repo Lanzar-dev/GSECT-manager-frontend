@@ -62,32 +62,6 @@ export default function Landing() {
               type="secondary"
               action={() => setOpenModal(true)}
             />
-            <Modal
-              isOpen={openModal}
-              onRequestClose={() => setOpenModal(false)}
-              className="login-popup"
-            >
-              <div className="modalDiv">
-                <div className="modalTitle">
-                  <h3>Log In</h3>
-                  <p>Access your free profile.</p>
-                </div>
-                <div className="closeBtn">
-                  <button onClick={() => setOpenModal(false)}>X</button>
-                </div>
-              </div>
-              <div className="formDiv">
-                <div className="extra">
-                  <Button type="secondary" label="Continue with Google" />
-                  <Button type="inverted" label="Continue with Facebook" />
-                </div>
-
-                <div className="loginDetails">
-                  <input type="text" />
-                  <input type="password" />
-                </div>
-              </div>
-            </Modal>
           </div>
         </div>
 
@@ -104,6 +78,7 @@ export default function Landing() {
           />
         </div>
       </section>
+      {/* section-two */}
       <section className="sub">
         <div className="sub-image">
           <img
@@ -137,7 +112,8 @@ export default function Landing() {
               <div className="choices-content">
                 <h3>Create ubscriptions</h3>
                 <p>
-                  Enable access to your email address to automatically add subscriptions or add it manually.
+                  Enable access to your email address to automatically add
+                  subscriptions or add it manually.
                 </p>
               </div>
             </div>
@@ -151,7 +127,8 @@ export default function Landing() {
               <div className="choices-content">
                 <h3>Track subscriptions</h3>
                 <p>
-                  View all the details of your current, paused and ended subscriptions. Stay updated.
+                  View all the details of your current, paused and ended
+                  subscriptions. Stay updated.
                 </p>
               </div>
             </div>
@@ -165,7 +142,8 @@ export default function Landing() {
               <div className="choices-content">
                 <h3>Everything in one place</h3>
                 <p>
-                  Pause and end your subscriptions easily in a few clicks. Review your hostory & expenses analysis.
+                  Pause and end your subscriptions easily in a few clicks.
+                  Review your hostory & expenses analysis.
                 </p>
               </div>
             </div>
@@ -180,25 +158,35 @@ export default function Landing() {
               isOpen={openModal}
               onRequestClose={() => setOpenModal(false)}
               className="login-popup"
+              style={{
+                overlay: {
+                  zIndex: 5,
+                  background: "#0000004f",
+                },
+              }}
             >
-              <div className="modalDiv">
+              <div className="modalHead">
                 <div className="modalTitle">
                   <h3>Log In</h3>
                   <p>Access your free profile.</p>
                 </div>
                 <div className="closeBtn">
-                  <button onClick={() => setOpenModal(false)}>X</button>
+                  <img
+                    onClick={() => setOpenModal(false)}
+                    src={require("../assets/images/close.png").default}
+                    alt="exit-popup"
+                  />
                 </div>
               </div>
               <div className="formDiv">
-                <div className="extra">
+                <div className="formBtn">
                   <Button type="secondary" label="Continue with Google" />
                   <Button type="inverted" label="Continue with Facebook" />
                 </div>
 
                 <div className="loginDetails">
-                  <input type="text" />
-                  <input type="password" />
+                  <input className="email" type="email" />
+                  <input className="password" type="password" />
                 </div>
               </div>
             </Modal>
