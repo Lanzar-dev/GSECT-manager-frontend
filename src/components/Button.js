@@ -15,6 +15,9 @@ export default function Button(props) {
     case "inverted":
       btnclass = "gsect-button inverted"
       break;
+    case "facebook":
+      btnclass = "gsect-button facebook"
+      break;
     default:
       btnclass = 'gsect-button'
   }

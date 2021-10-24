@@ -24,6 +24,7 @@
           color: $white;
           font-weight: $font-medium;
           margin-right: 40px;
+          cursor: pointer;
           &:active, &:visited, &:hover {
             color: $gsectyellow;
           }

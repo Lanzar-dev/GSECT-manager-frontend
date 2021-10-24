@@ -7,6 +7,11 @@ import Button from "../components/Button";
 
 export default function Landing() {
   const [openModal, setOpenModal] = useState(false);
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   return (
     <div className="landing">
@@ -26,7 +31,7 @@ export default function Landing() {
             <a href="/support" className="link">
               Support
             </a>
-            <a href="/login" className="link">
+            <a href="/" onClick={(e) => {setOpenModal(true); e.preventDefault() }} className="link">
               Log in
             </a>
           </div>
@@ -181,12 +186,19 @@ export default function Landing() {
               <div className="formDiv">
                 <div className="formBtn">
                   <Button type="secondary" label="Continue with Google" />
-                  <Button type="inverted" label="Continue with Facebook" />
+                  <Button type="facebook" label="Continue with Facebook" />
                 </div>
 
                 <div className="loginDetails">
                   <input className="email" type="email" />
-                  <input className="password" type="password" />
+
+                  <div className="holder">
+                    <input
+                      className="password"
+                      type={passwordShown ? "text" : "password"}
+                    />
+                    <img onClick={togglePassword} src={require('../assets/images/eye.png').default} alt=""/>
+                  </div>
                 </div>
               </div>
             </Modal>

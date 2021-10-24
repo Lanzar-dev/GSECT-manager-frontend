@@ -16,4 +16,8 @@
     background-color: transparent;
     border: 1px solid $gsectblue;
   }
+  &.facebook {
+    background-color: $facebook;
+    color: $white;
+  }
 }
