@@ -49,3 +49,12 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 28, 53, 0.5) !important;
+  z-index: 99;
+  top: $headerHeight !important;
+}
+.mt-2 {
+  margin-top: 8px;
+}

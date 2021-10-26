@@ -8,9 +8,16 @@
   height: 53px;
   color: $gsectblue;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   &.inverted {
     background-color: $gsectblue;
-    color: $white;
+    span {
+      color: $white;
+    }
   }
   &.secondary {
     background-color: transparent;
