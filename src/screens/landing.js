@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { CSSTransition } from "react-transition-group";
+//styles
+import "../styles/components/transition.scss";
 import "../styles/landing.scss";
 import "../styles/components/modal.scss";
 // components
@@ -31,7 +34,14 @@ export default function Landing() {
             <a href="/support" className="link">
               Support
             </a>
-            <a href="/" onClick={(e) => {setOpenModal(true); e.preventDefault() }} className="link">
+            <a
+              href="/"
+              onClick={(e) => {
+                setOpenModal(true);
+                e.preventDefault();
+              }}
+              className="link"
+            >
               Log in
             </a>
           </div>
@@ -159,49 +169,56 @@ export default function Landing() {
               type="inverted"
               action={() => console.log("test 123")}
             />
-            <Modal
-              isOpen={openModal}
-              onRequestClose={() => setOpenModal(false)}
-              className="login-popup"
-              style={{
-                overlay: {
-                  zIndex: 5,
-                  background: "#0000004f",
-                },
-              }}
-            >
-              <div className="modalHead">
-                <div className="modalTitle">
-                  <h3>Log In</h3>
-                  <p>Access your free profile.</p>
-                </div>
-                <div className="closeBtn">
-                  <img
-                    onClick={() => setOpenModal(false)}
-                    src={require("../assets/images/close.png").default}
-                    alt="exit-popup"
-                  />
-                </div>
-              </div>
-              <div className="formDiv">
-                <div className="formBtn">
-                  <Button type="secondary" label="Continue with Google" />
-                  <Button type="facebook" label="Continue with Facebook" />
-                </div>
-
-                <div className="loginDetails">
-                  <input className="email" type="email" />
-
-                  <div className="holder">
-                    <input
-                      className="password"
-                      type={passwordShown ? "text" : "password"}
+            <CSSTransition isOpen={openModal} timeout={300}>
+              <Modal
+                isOpen={openModal}
+                onRequestClose={() => setOpenModal(false)}
+                closeTimeoutMS={500}
+                className="login-popup"
+                style={{
+                  overlay: {
+                    zIndex: 5,
+                    background: "#0000004f",
+                  },
+                }}
+              >
+                <div className="modalHead">
+                  <div className="modalTitle">
+                    <h3>Log In</h3>
+                    <p>Access your free profile.</p>
+                  </div>
+                  <div className="closeBtn">
+                    <img
+                      onClick={() => setOpenModal(false)}
+                      src={require("../assets/images/close.png").default}
+                      alt="exit-popup"
                     />
-                    <img onClick={togglePassword} src={require('../assets/images/eye.png').default} alt=""/>
                   </div>
                 </div>
-              </div>
-            </Modal>
+                <div className="formDiv">
+                  <div className="formBtn">
+                    <Button type="secondary" label="Continue with Google" />
+                    <Button type="facebook" label="Continue with Facebook" />
+                  </div>
+
+                  <div className="loginDetails">
+                    <input className="email" type="email" />
+
+                    <div className="holder">
+                      <input
+                        className="password"
+                        type={passwordShown ? "text" : "password"}
+                      />
+                      <img
+                        onClick={togglePassword}
+                        src={require("../assets/images/eye.png").default}
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Modal>
+            </CSSTransition>
           </div>
         </div>
       </section>
