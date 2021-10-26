@@ -4,8 +4,9 @@
   border: none;
   background: $white;
   border-radius: 4px;
-  width: 220px;
-  height: 48px;
+  width: 240px;
+  height: 53px;
+  color: $gsectblue;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -22,29 +23,8 @@
     background-color: transparent;
     border: 1px solid $gsectblue;
   }
-  &.gray {
-    background-color: $gsectgraylite;
-    span {
-      font-weight: 600;
-      color: $gsectgreen;
-    }
-  }
-  &.blue {
-    background-color: $gsectbluish;
-    span {
-      font-weight: 600;
-      color: $white;
-    }
-  }
-  span {
-    color: $gsectblue;
-  }
-  .with-icon {
-    height: 22px;
-    position: absolute;
-    left: 24px;
-  }
-  &.mb-4 {
-    margin-bottom: 16px;
+  &.facebook {
+    background-color: $facebook;
+    color: $white;
   }
 }

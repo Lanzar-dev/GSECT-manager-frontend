@@ -1,75 +1,61 @@
-@import "../variables.scss";
+@import '../variables.scss';
 
-.login-popup {
-  width: 386px;
-  border: none;
-  border-radius: 5px;
-  background-color: $white;
-  margin: auto;
-  display: block;
-  justify-content: center;
-  padding: 20px;
-  .header {
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 24px;
-    .modalTitle {
-      color: $gsectblack;
-      h3 {
-        margin-bottom: 8px;
-        font-size: 20px;
-        font-weight: bold;
-      }
-      p {
-        margin-top: 0;
-        font-size: 14px;
-      }
-    }
-    button.close {
-      position: absolute;
-      top: 16px;
-      right: 0;
-      background: none;
-      border: none;
-      color: $gsectblack;
-      font-size: 22px;
-      font-weight: 500;
-      img {
-        width: 14px;
-        height: 14px;
-      }
-    }
-  }
-  .form {
+.login-popup{
+    width: 386px;
+    height: 552px;
+    border: none;
+    border-radius: 5px;
+    background-color: $white;
     display: block;
+    margin: 50px auto;
+    align-content: center;
+    
     justify-content: center;
-    .loginDetails {
-      margin-top: 55px;
-      width: 100%;
-      .plain-button {
-        border: none;
-        color: $gsectblue;
-        background: none;
-        margin: 12px 0;
-        margin-left: auto;
-        display: block;
-      }
-    }
-    .deserted {
-      position: relative;
-      top: 67px;
-      text-align: center;
-      font-size: 14px;
-      font-weight: 500;
-      color: $white;
-      button {
-        border: none;
-        background: none;
-        color: $gsectyellow;
-        font-weight: 500;
-      }
-    }
-  }
+    padding: 15px;
+    outline: none;
+        .modalHead{
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            .closeBtn img{
+                cursor: pointer;
+                position: relative;
+            }
+            .modalTitle{
+                position: relative;
+                top: -15px;
+            }
+        }
+        .formDiv{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            .loginDetails{
+                input{
+                    margin: 10px auto;
+                    width: 220px;
+                    height: 48px;
+                    background: #F6F7FB;
+                    border: 1px solid #EAEAED;
+                    box-sizing: border-box;
+                    box-shadow: inset 0px 2px 5px #00000005;
+                    border-radius: 8px;
+                    color: $gsectblue;
+                    font-size: large;
+                }
+                .holder{
+                    img{
+                       position: relative;
+                       right:30px;
+                       bottom: -5px;
+                       cursor: pointer;
+                       filter: opacity(60%) grayscale(60%);
+                       width: 20px;
+                    }
+                }
+            }
+            .formBtn button{
+                margin: 10px auto;
+            }
+        }
 }
