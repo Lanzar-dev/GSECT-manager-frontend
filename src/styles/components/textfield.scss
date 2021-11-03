@@ -1,0 +1,32 @@
+@import "../variables.scss";
+
+.textfield {
+  position: relative;
+  input {
+    border: none;
+    border: 1px solid #f9f9f9;
+    border-radius: 4px;
+    height: 48px;
+    color: $gsectblue;
+    width: calc(100% - 40px);
+    font-weight: 600;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    &:active,
+    &:visited,
+    &:focus {
+      border-color: $gsectblue;
+    }
+  }
+  button.show-password {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    border: none;
+    background: none;
+    img {
+      width: 24px;
+      height: 14px;
+    }
+  }
+}
