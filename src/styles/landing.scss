@@ -1,7 +1,8 @@
 @import "./variables.scss";
 
 .landing {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   header.header {
     width: calc(100% - 100px);
     display: flex;
@@ -94,7 +95,7 @@
     position: relative;
     align-items: center;
     justify-content: space-between;
-    height: 632px;
+    height: 775px;
     width: 100%;
     background: $white;
     .sub-image{
@@ -108,7 +109,7 @@
           position: absolute;
         }
         .sub-img{
-          width: 445.58px;
+          width: 446px;
           height: 577px;
           position: absolute;
           left: 153px;
@@ -179,5 +180,69 @@
       top: 613px;
     }
   }
+  .manage{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 775px;
+    width: 100%;
+    background: #f9f9f9;
+    .manage-text{
+      width: 510px;
+      height: 304px;
+      color: $gsectblue;
+      margin: 0 auto;
+      text-align: left;
+      display: block;
+      justify-content: center;
+      align-content: center;
+      h1{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 39px;
+        line-height: 45px;
+      }
+      p{
+        width: 414px;
+        height: 107px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 27px;
+      }
+    }
+    .manage-image{
+      width: 487px;
+      height: 678px;
+      left: 903px;
+      top: 58px;
+      .top-left{
+        position: absolute;
+        width: 372px;
+        height: 275px;
+        left: 800px;
+        top: 58px;
+        z-index: 1;
+      }
+      .manage-img{
+        z-index: 0;
+        position: absolute;
+        width: 445.58px;
+        height: 577px;
+        left: 850px;
+        top: 99px;
+      }
+      .right-bottom{
+        z-index: 1;
+        position: absolute;
+        width: 136px;
+        height: 97px;
+        left: 1120px;
+        top: 639px;
+      }
+    }
+  }
+  
 }
 
