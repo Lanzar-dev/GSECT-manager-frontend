@@ -201,25 +201,72 @@ export default function Landing() {
                     <Button type="facebook" label="Continue with Facebook" />
                   </div>
 
-                  <div className="loginDetails">
-                    <input className="email" type="email" />
+                  <div className="space">
+                    <hr />
+                    <div className="or">or</div>
+                  </div>
 
+                  <div className="loginDetails">
+                    <input className="email" type="email" placeholder="Email" />
+
+                    <input
+                      className="password"
+                      type={passwordShown ? "text" : "password"}
+                      placeholder="Password"
+                      src={require("../assets/images/eye.png").default}
+                      alt=""
+                    />
                     <div className="holder">
-                      <input
-                        className="password"
-                        type={passwordShown ? "text" : "password"}
-                      />
                       <img
                         onClick={togglePassword}
                         src={require("../assets/images/eye.png").default}
                         alt=""
                       />
                     </div>
+                    <Button type="inverted" label="Log In" />
+                    <p>
+                      <a href="/">Forgot password?</a>
+                    </p>
                   </div>
+                </div>
+                <div className="create">
+                  <p>
+                    Don't have an coount? <a href="/">Sign up</a>
+                  </p>
                 </div>
               </Modal>
             </CSSTransition>
           </div>
+        </div>
+      </section>
+      {/* section-three */}
+      <section className="manage">
+        <div className="manage-text">
+          <h1>Manage your subscriptions in one place.</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
+            integer rhoncus duis adipiscing facilisis id. Sed molestie auctor
+            nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
+            proin enim.
+          </p>
+          <Button type="inverted" label="Get Started" />
+        </div>
+        <div className="manage-image">
+          <img
+            className="top-left"
+            src={require("../assets/images/medium-ring.png").default}
+            alt="gsect dashboard"
+          />
+          <img
+            className="manage-img"
+            src={require("../assets/images/Intersect.png").default}
+            alt="gsect dashboard"
+          />
+          <img
+            className="right-bottom"
+            src={require("../assets/images/small-ring.png").default}
+            alt="gsect dashboard"
+          />
         </div>
       </section>
     </div>
