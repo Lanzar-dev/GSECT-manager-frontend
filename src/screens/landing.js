@@ -8,6 +8,7 @@ import "../styles/landing.scss";
 import "../styles/components/modal.scss";
 // components
 import Button from "../components/Button";
+// import Footer from "../components/Footer";
 
 export default function Landing() {
   const [openModal, setOpenModal] = useState(false);
@@ -16,204 +17,195 @@ export default function Landing() {
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
+  const choices = [
+    {
+      id: 0,
+      title: 'Create subcriptions',
+      subtitle: 'Enable access to your email address to automatically add subscriptions or add it manually.',
+      icon: require("../assets/images/tool-box.png").default,
+    },
+    {
+      id: 1,
+      title: 'Track subcriptions ',
+      subtitle: 'View all the details of your current, paused and ended subcriptions. Stay updated.',
+      icon: require("../assets/images/track.png").default,
+    },
+    {
+      id: 2,
+      title: 'Everthing in one place',
+      subtitle: 'Pause and end your subcriptions easily in a few clicks. Review your history & expenses analysis.',
+      icon: require("../assets/images/tool-box.png").default,
+    }
+  ]
 
   return (
-    <div className="landing">
-      <header className="header">
-        <div className="menu">
-          <img
-            src={require("../assets/images/logo.png").default}
-            alt="logo-white"
-          />
-          <div className="links">
-            <NavLink to="/" className="link">
-              Home
-            </NavLink>
-            <NavLink to="/about" className="link">
-              About Us
-            </NavLink>
-            <NavLink to="/support" className="link">
-              Support
-            </NavLink>
-            <Link
-              onClick={(e) => {
-                setOpenModal(true);
-                e.preventDefault();
-              }}
-              className="link"
-            >
-              Log in
-            </Link>
+    <>
+      <div className="landing">
+        <header className="header">
+          <div className="menu">
+            <img
+              src={require("../assets/images/logo.png").default}
+              alt="logo-white"
+            />
+            <div className="links">
+              <NavLink to="/" className="link">
+                Home
+              </NavLink>
+              <NavLink to="/about" className="link">
+                About Us
+              </NavLink>
+              <NavLink to="/support" className="link">
+                Support
+              </NavLink>
+              <Link
+                onClick={(e) => {
+                  setOpenModal(true);
+                  e.preventDefault();
+                }}
+                className="link"
+              >
+                Log in
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="get-started">
-          <Button
-            label="Get started"
-            type="primary"
-            action={() => console.log("test 123")}
-          />
-        </div>
-      </header>
-      <section className="banner">
-        <div className="content">
-          <img
-            className="right-top-left"
-            src={require("../assets/images/small-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <h1 className="title">Manage your subscriptions in one place</h1>
-          <p className="subtitle">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis.
-          </p>
-          <div className="actions">
+          <div className="get-started">
             <Button
               label="Get started"
-              type="inverted"
-              action={() => console.log("test 123")}
-            />
-            <Button
-              label="Log In"
-              type="secondary"
-              action={() => setOpenModal(true)}
-            />
-          </div>
-        </div>
-
-        <div className="banner-image">
-          <img
-            className="right-bottom-right"
-            src={require("../assets/images/big-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="banner-img"
-            src={require("../assets/images/banner-img.png").default}
-            alt="gsect dashboard"
-          />
-        </div>
-      </section>
-      {/* section-two */}
-      <section className="sub">
-        <div className="sub-image">
-          <img
-            className="left-top-left"
-            src={require("../assets/images/medium-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="sub-img"
-            src={require("../assets/images/gsect-boy.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="bottom-right"
-            src={require("../assets/images/small-ring.png").default}
-            alt="gsect dashboard"
-          />
-        </div>
-
-        <div className="sub-content">
-          <h1 className="title">Manage your subscriptions in one place</h1>
-
-          <div className="subtitle">
-            <div className="choices">
-              <div className="choices-img">
-                <img
-                  src={require("../assets/images/tool-box.png").default}
-                  alt=""
-                />
-              </div>
-              <div className="choices-content">
-                <h3>Create ubscriptions</h3>
-                <p>
-                  Enable access to your email address to automatically add
-                  subscriptions or add it manually.
-                </p>
-              </div>
-            </div>
-            <div className="choices">
-              <div className="choices-img">
-                <img
-                  src={require("../assets/images/track.png").default}
-                  alt=""
-                />
-              </div>
-              <div className="choices-content">
-                <h3>Track subscriptions</h3>
-                <p>
-                  View all the details of your current, paused and ended
-                  subscriptions. Stay updated.
-                </p>
-              </div>
-            </div>
-            <div className="choices">
-              <div className="choices-img">
-                <img
-                  src={require("../assets/images/tool-box.png").default}
-                  alt=""
-                />
-              </div>
-              <div className="choices-content">
-                <h3>Everything in one place</h3>
-                <p>
-                  Pause and end your subscriptions easily in a few clicks.
-                  Review your hostory & expenses analysis.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <Button
-              label="Get started"
-              type="inverted"
+              type="primary"
               action={() => console.log("test 123")}
             />
           </div>
-        </div>
-      </section>
-      {/* section-three */}
-      <section className="manage">
-        <div className="manage-text">
-          <h1>Manage your subscriptions in one place.</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
-            integer rhoncus duis adipiscing facilisis id. Sed molestie auctor
-            nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
-            proin enim.
-          </p>
-          <Button type="inverted" label="Get Started" />
-        </div>
-        <div className="manage-image">
-          <img
-            className="top-left"
-            src={require("../assets/images/medium-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="manage-img"
-            src={require("../assets/images/Intersect.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="right-bottom"
-            src={require("../assets/images/small-ring.png").default}
-            alt="gsect dashboard"
-          />
-        </div>
-      </section>
-      <section></section>
+        </header>
+        <section className="banner">
+          <div className="content">
+            <img
+              className="right-top-left"
+              src={require("../assets/images/small-ring.png").default}
+              alt="gsect dashboard"
+            />
+            <h1 className="title">Manage your subscriptions in one place</h1>
+            <p className="subtitle">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
+              purus sit amet luctus venenatis.
+            </p>
+            <div className="actions">
+              <Button
+                label="Get started"
+                type="inverted"
+                action={() => console.log("test 123")}
+              />
+              <div className="show-lg-only">
+                <Button
+                  label="Log In"
+                  type="secondary"
+                  action={() => setOpenModal(true)}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="banner-image">
+            <img
+              className="right-bottom-right"
+              src={require("../assets/images/big-ring.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="banner-img"
+              src={require("../assets/images/banner-img.png").default}
+              alt="gsect dashboard"
+            />
+          </div>
+        </section>
+        <section className="sub">
+          <div className="sub-image">
+            <img
+              className="left-top-left"
+              src={require("../assets/images/medium-ring.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="sub-img"
+              src={require("../assets/images/gsect-boy.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="bottom-right"
+              src={require("../assets/images/small-ring.png").default}
+              alt="gsect dashboard"
+            />
+          </div>
+
+          <div className="sub-content">
+            <h1 className="title">Manage your subscriptions in one place</h1>
+
+            <div className="subtitle">
+              {choices && choices.map((choice) => (
+                <div className="choices" key={choice.id}>
+                  <div className="choices-img">
+                    {/* <img
+                      src={choice.icon}
+                      alt=""
+                    /> */}
+                  </div>
+                  <div className="choices-content">
+                    <h3>{choice.title}</h3>
+                    <p>{choice.subtitle}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="actions">
+                <Button
+                  label="Get started"
+                  type="inverted"
+                  action={() => console.log("test 123")}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* section-three */}
+        <section className="manage">
+          <div className="manage-text">
+            <h1>Manage your subscriptions in one place.</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
+              integer rhoncus duis adipiscing facilisis id. Sed molestie auctor
+              nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
+              proin enim.
+            </p>
+            <Button type="inverted" label="Get Started" />
+          </div>
+          <div className="manage-image">
+            <img
+              className="top-left"
+              src={require("../assets/images/medium-ring.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="manage-img"
+              src={require("../assets/images/Intersect.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="right-bottom"
+              src={require("../assets/images/small-ring.png").default}
+              alt="gsect dashboard"
+            />
+          </div>
+        </section>
+      </div>
+      {/* <Footer/> */}
       <CSSTransition isOpen={openModal} timeout={300}>
         <Modal
           isOpen={openModal}
           onRequestClose={() => setOpenModal(false)}
-          closeTimeoutMS={400}
+          closeTimeoutMS={500}
           className="login-popup"
           style={{
             overlay: {
               zIndex: 5,
               background: "#0000004f",
-              top: "0px",
             },
           }}
         >
@@ -222,7 +214,7 @@ export default function Landing() {
               <h3>Log In</h3>
               <p>Access your free profile.</p>
             </div>
-            <div className="close">
+            <div className="closeBtn">
               <img
                 onClick={() => setOpenModal(false)}
                 src={require("../assets/images/close.png").default}
@@ -271,6 +263,6 @@ export default function Landing() {
           </div>
         </Modal>
       </CSSTransition>
-    </div>
+    </>
   );
 }

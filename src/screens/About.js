@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles//about.scss";
+import Footer from '../components/Footer'
 
 import Button from "../components/Button";
 
@@ -110,6 +111,7 @@ const About = () => {
           </p>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };

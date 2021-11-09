@@ -42,12 +42,12 @@ const Footer = () => {
       <section className="minor">
         <div>
           <h3>GSECTmanager</h3>
-          <p>All your subscriptionsin one click</p>
+          <p>All your subscriptions in one click</p>
           <p>&copy;2021 GSECTmanager. All rights reserved</p>
         </div>
         <div>
           <h3>GSECTmanager</h3>
-          <p>All your subscriptionsin one click</p>
+          <p>All your subscriptions in one click</p>
           <p>&copy;2021 GSECTmanager. All rights reserved</p>
         </div>
       </section>
