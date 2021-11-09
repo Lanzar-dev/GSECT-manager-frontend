@@ -1,7 +1,7 @@
 import "./styles/styles.scss";
 import Landing from "./screens/landing";
 import About from './screens/About'
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 //router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,7 +16,7 @@ function App() {
           {/* <Route exact path="/support" component={Support} /> */}
         </Switch>
       </Router>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
