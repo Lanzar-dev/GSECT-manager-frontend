@@ -6,56 +6,123 @@
     border: none;
     border-radius: 5px;
     background-color: $white;
-    display: block;
     margin: 50px auto;
-    align-content: center;
-    
+    text-align: center;
     justify-content: center;
-    padding: 15px;
+    padding: 20px;
     outline: none;
         .modalHead{
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
-            .closeBtn img{
-                cursor: pointer;
-                position: relative;
-            }
             .modalTitle{
-                position: relative;
-                top: -15px;
+                text-align: left;
+            }
+            .close img{
+                cursor: pointer;
+                width: 20px;
             }
         }
         .formDiv{
             display: block;
             justify-content: center;
-            align-items: center;
+            .formBtn button{
+                margin: 10px auto;
+                width: 333px;
+            }
             .loginDetails{
+                display: block;
+                justify-content: center;
+                align-items: center;
                 input{
-                    margin: 10px auto;
-                    width: 220px;
-                    height: 48px;
+                    margin: 8px auto;
+                    width: 333px;
+                    height: 50px;
                     background: #F6F7FB;
                     border: 1px solid #EAEAED;
                     box-sizing: border-box;
                     box-shadow: inset 0px 2px 5px #00000005;
-                    border-radius: 8px;
+                    border-radius: 4px;
                     color: $gsectblue;
                     font-size: large;
                 }
+                input:nth-child(2){
+                    margin-bottom: 0;
+                }
+                button{
+                    margin: 0 auto;
+                    width: 333px;
+                    height: 50px;
+                }
+                p{
+                    position: relative;
+                    justify-content: center;
+                    text-align: right;
+                    right: 8%;
+                    line-height: 14px;
+                    a{
+                        font-weight: normal;
+                        color: $gsectblue;
+                        font-size: 12px;
+                        text-decoration: none;
+                    }
+                }
                 .holder{
+                    position: relative;
+                    left: 330px;
+                    top: -33px;
+                    width: fit-content;
                     img{
-                       position: relative;
-                       right:30px;
-                       bottom: -5px;
                        cursor: pointer;
                        filter: opacity(60%) grayscale(60%);
                        width: 20px;
+                       &:active{
+                           filter: opacity(100%) grayscale(0%);
+                       }
                     }
                 }
             }
-            .formBtn button{
-                margin: 10px auto;
+        }
+        .space{
+            margin: 30px auto 0px auto;
+            hr{
+                border-color: #02378740;
+                margin: 0 auto;
+                width: 333px;
+            }
+            .or{
+                z-index: 1;
+                background-color: $white;
+                width: 20px;
+                padding: 5px;
+                // position: relative;
+                margin: 0 auto;
+                // top: -15px;
+                border: none;
+                color: #02378740;
+                font-size: 12px;
+                line-height: 15px;
+                font-weight: 500px;
+                text-align: center;
+            }
+        }
+        .create{
+            position: relative;
+            width: 331px;
+            height: 32px;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            top: 30px;
+            p{
+                font-weight: 500px;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: center;
+                color: $white;
+                a{
+                    color: $gsectyellow;
+                    text-decoration: none;
+                }
             }
         }
 }

@@ -1,27 +1,33 @@
-import React from 'react'
-import '../styles/components/button.scss';
+import React from "react";
+import "../styles/components/button.scss";
 
 export default function Button(props) {
-  const { label, action, type = 'primary' } = props;
+  const { label, action, type = "primary" } = props;
   console.log(label);
-  let btnclass = 'gsect-button';
+  let btnclass = "gsect-button";
   switch (type) {
     case "secondary":
-      btnclass = 'gsect-button secondary'
+      btnclass = "gsect-button secondary";
       break;
     case "native":
-      btnclass = "gsect-button native"
+      btnclass = "gsect-button native";
       break;
     case "inverted":
-      btnclass = "gsect-button inverted"
+      btnclass = "gsect-button inverted";
       break;
     case "facebook":
-      btnclass = "gsect-button facebook"
+      btnclass = "gsect-button facebook";
+      break;
+    case "subscribe":
+      btnclass = "gsect-button subscribe";
       break;
     default:
-      btnclass = 'gsect-button'
+      btnclass = "gsect-button";
   }
   return (
-    <button className={btnclass} onClick={action}>{label}</button>
-  )
+    <button className={btnclass} onClick={action}>
+      {label}
+    </button>
+  );
 }
+

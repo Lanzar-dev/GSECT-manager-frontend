@@ -15,9 +15,7 @@
   align-items: center;
   &.inverted {
     background-color: $gsectblue;
-    span {
-      color: $white;
-    }
+    color: $white;
   }
   &.secondary {
     background-color: transparent;
@@ -26,5 +24,9 @@
   &.facebook {
     background-color: $facebook;
     color: $white;
+  }
+  &.subscribe {
+    background-color: $gsectyellow;
+    color: $gsectblue;
   }
 }
