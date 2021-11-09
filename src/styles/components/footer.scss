@@ -1,0 +1,67 @@
+@import '../variables.scss';
+
+.footer{
+    background-color: $gsectblue;
+    // height: 462px;
+    width: 100vw;
+    // position: absolute;
+    bottom: 0px;
+    color: $white;
+    padding: 5px;
+    .main, .minor{
+        display: flex;
+        justify-content: space-between;
+    }
+    .main{
+        form{
+            display: block;
+            input{
+                color: $white;
+                width: 560px;
+                height: 52px;
+                background-color: $gsectblue;
+                border: 1px solid $white;
+                border-radius: 5px;
+                margin-bottom: 8px;
+                font-size: 14px;
+                padding: 0 0 0 40px;
+            }
+            input::placeholder{
+                color: $white;
+            }
+        }
+        .company, .legal, .earn, .join{
+            margin: 0 auto;
+            h2{
+                font-size: 20px;
+            }
+            h3{
+                font-size: 14px;
+            }
+            p{
+                font-size: 15px;
+                margin: 20px 0;
+                color: $gsectgray;
+                font-weight: lighter;
+            }
+        }
+        .company{
+            width: 110px;
+        }
+        .legal{
+            width: 236px;
+        }
+        .earn{
+            width: 129px;
+        }
+    }
+    .minor{
+        div{
+            margin: 0 auto;
+        }
+    }
+    
+    hr{
+        border: 1px solid $gsectyellow;
+    }
+}

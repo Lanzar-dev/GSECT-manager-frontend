@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { CSSTransition } from "react-transition-group";
+import { Link, NavLink } from "react-router-dom";
 //styles
 import "../styles/components/transition.scss";
 import "../styles/landing.scss";
@@ -25,17 +26,16 @@ export default function Landing() {
             alt="logo-white"
           />
           <div className="links">
-            <a href="/" className="link">
+            <NavLink to="/" className="link">
               Home
-            </a>
-            <a href="/about" className="link">
+            </NavLink>
+            <NavLink to="/about" className="link">
               About Us
-            </a>
-            <a href="/support" className="link">
+            </NavLink>
+            <NavLink to="/support" className="link">
               Support
-            </a>
-            <a
-              href="/"
+            </NavLink>
+            <Link
               onClick={(e) => {
                 setOpenModal(true);
                 e.preventDefault();
@@ -43,7 +43,7 @@ export default function Landing() {
               className="link"
             >
               Log in
-            </a>
+            </Link>
           </div>
         </div>
         <div className="get-started">
@@ -163,79 +163,12 @@ export default function Landing() {
               </div>
             </div>
           </div>
-          <div className="actions">
+          <div>
             <Button
               label="Get started"
               type="inverted"
               action={() => console.log("test 123")}
             />
-            <CSSTransition isOpen={openModal} timeout={300}>
-              <Modal
-                isOpen={openModal}
-                onRequestClose={() => setOpenModal(false)}
-                closeTimeoutMS={500}
-                className="login-popup"
-                style={{
-                  overlay: {
-                    zIndex: 5,
-                    background: "#0000004f",
-                  },
-                }}
-              >
-                <div className="modalHead">
-                  <div className="modalTitle">
-                    <h3>Log In</h3>
-                    <p>Access your free profile.</p>
-                  </div>
-                  <div className="closeBtn">
-                    <img
-                      onClick={() => setOpenModal(false)}
-                      src={require("../assets/images/close.png").default}
-                      alt="exit-popup"
-                    />
-                  </div>
-                </div>
-                <div className="formDiv">
-                  <div className="formBtn">
-                    <Button type="secondary" label="Continue with Google" />
-                    <Button type="facebook" label="Continue with Facebook" />
-                  </div>
-
-                  <div className="space">
-                    <hr />
-                    <div className="or">or</div>
-                  </div>
-
-                  <div className="loginDetails">
-                    <input className="email" type="email" placeholder="Email" />
-
-                    <input
-                      className="password"
-                      type={passwordShown ? "text" : "password"}
-                      placeholder="Password"
-                      src={require("../assets/images/eye.png").default}
-                      alt=""
-                    />
-                    <div className="holder">
-                      <img
-                        onClick={togglePassword}
-                        src={require("../assets/images/eye.png").default}
-                        alt=""
-                      />
-                    </div>
-                    <Button type="inverted" label="Log In" />
-                    <p>
-                      <a href="/">Forgot password?</a>
-                    </p>
-                  </div>
-                </div>
-                <div className="create">
-                  <p>
-                    Don't have an coount? <a href="/">Sign up</a>
-                  </p>
-                </div>
-              </Modal>
-            </CSSTransition>
           </div>
         </div>
       </section>
@@ -269,6 +202,75 @@ export default function Landing() {
           />
         </div>
       </section>
+      <section></section>
+      <CSSTransition isOpen={openModal} timeout={300}>
+        <Modal
+          isOpen={openModal}
+          onRequestClose={() => setOpenModal(false)}
+          closeTimeoutMS={400}
+          className="login-popup"
+          style={{
+            overlay: {
+              zIndex: 5,
+              background: "#0000004f",
+              top: "0px",
+            },
+          }}
+        >
+          <div className="modalHead">
+            <div className="modalTitle">
+              <h3>Log In</h3>
+              <p>Access your free profile.</p>
+            </div>
+            <div className="close">
+              <img
+                onClick={() => setOpenModal(false)}
+                src={require("../assets/images/close.png").default}
+                alt="exit-popup"
+              />
+            </div>
+          </div>
+          <div className="formDiv">
+            <div className="formBtn">
+              <Button type="secondary" label="Continue with Google" />
+              <Button type="facebook" label="Continue with Facebook" />
+            </div>
+
+            <div className="space">
+              <hr />
+              <div className="or">or</div>
+            </div>
+
+            <div className="loginDetails">
+              <input className="email" type="email" placeholder="Email" />
+
+              <input
+                className="password"
+                type={passwordShown ? "text" : "password"}
+                placeholder="Password"
+                src={require("../assets/images/eye.png").default}
+                alt=""
+              />
+              <div className="holder">
+                <img
+                  onClick={togglePassword}
+                  src={require("../assets/images/eye.png").default}
+                  alt=""
+                />
+              </div>
+              <Button type="inverted" label="Log In" />
+              <p>
+                <a href="/">Forgot password?</a>
+              </p>
+            </div>
+          </div>
+          <div className="create">
+            <p>
+              Don't have an coount? <a href="/">Sign up</a>
+            </p>
+          </div>
+        </Modal>
+      </CSSTransition>
     </div>
   );
 }

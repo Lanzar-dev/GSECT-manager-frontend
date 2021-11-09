@@ -2,7 +2,6 @@
 
 .landing {
   width: 100vw;
-  height: 100vh;
   header.header {
     width: calc(100% - 100px);
     display: flex;
@@ -26,7 +25,7 @@
           font-weight: $font-medium;
           margin-right: 40px;
           cursor: pointer;
-          &:active, &:visited, &:hover {
+          &:active, &:hover, &:focus {
             color: $gsectyellow;
           }
         }
@@ -106,22 +105,21 @@
           left: 112px;
           top: 58px;
           z-index: 1;
-          position: absolute;
+          position: relative;
         }
         .sub-img{
           width: 446px;
-          height: 577px;
           position: absolute;
           left: 153px;
           top: 99px;
         }
         .bottom-right{
           width: 136px;
-          height: 97px;
+          // height: 97px;
           left: 416px;
           top: 639px;
           z-index: 1;
-          position: relative;
+          position: absolute;
         }
     }
     .sub-content{
@@ -141,30 +139,21 @@
         }
         .subtitle{
           width: 466px;
-          height: 322px;
-          left: 780px;
-          top: 239px;
           .choices {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 466px;
-            height: 80px;
-            left: 780px;
-            top: 239px;
-            margin-bottom: 30px;
-            flex: 1;
+            margin-bottom: 40px;
+            flex-direction: row;
             .choices-img{
               background-color: $gsectyellow;
               padding: 14px;
-              border-radius: 100%;
-              align-self: center;
+              border-radius: 100px;
               width: 25px;
-              height: 20px;
             }
             .choices-content{
               width: 382px;
-              height: 80px;
                 h3, p{
                   margin: 0;
                 }
@@ -190,7 +179,6 @@
     background: #f9f9f9;
     .manage-text{
       width: 510px;
-      height: 304px;
       color: $gsectblue;
       margin: 0 auto;
       text-align: left;
@@ -198,25 +186,18 @@
       justify-content: center;
       align-content: center;
       h1{
-        font-style: normal;
         font-weight: bold;
         font-size: 39px;
-        line-height: 45px;
       }
       p{
         width: 414px;
-        height: 107px;
-        text-align: left;
         font-size: 16px;
         line-height: 26px;
         margin-bottom: 27px;
       }
     }
     .manage-image{
-      width: 487px;
-      height: 678px;
-      left: 903px;
-      top: 58px;
+      width: 50%;
       .top-left{
         position: absolute;
         width: 372px;
@@ -228,6 +209,7 @@
       .manage-img{
         z-index: 0;
         position: absolute;
+        text-align: right;
         width: 445.58px;
         height: 577px;
         left: 850px;
@@ -237,7 +219,6 @@
         z-index: 1;
         position: absolute;
         width: 136px;
-        height: 97px;
         left: 1120px;
         top: 639px;
       }
