@@ -1,23 +1,24 @@
 @import '../variables.scss';
 
+
 .login-popup{
     width: 386px;
-    height: 552px;
+    height: 584px;
     border: none;
     border-radius: 5px;
     background-color: $white;
-    margin: 50px auto;
+    margin: 25px auto;
     text-align: center;
-    justify-content: center;
     padding: 20px;
     outline: none;
         .modalHead{
             display: flex;
+            align-items: flex-start;
             justify-content: space-between;
             .modalTitle{
                 text-align: left;
             }
-            .close img{
+            .closeBtn img{
                 cursor: pointer;
                 width: 20px;
             }
@@ -94,9 +95,9 @@
                 background-color: $white;
                 width: 20px;
                 padding: 5px;
-                // position: relative;
+                position: relative;
                 margin: 0 auto;
-                // top: -15px;
+                top: -15px;
                 border: none;
                 color: #02378740;
                 font-size: 12px;
@@ -107,12 +108,8 @@
         }
         .create{
             position: relative;
-            width: 331px;
-            height: 32px;
-            justify-content: center;
-            text-align: center;
             margin: 0 auto;
-            top: 30px;
+            top: 80px;
             p{
                 font-weight: 500px;
                 font-size: 12px;
@@ -125,4 +122,150 @@
                 }
             }
         }
+}
+.signup{
+    width: 386px;
+    height: 462px;
+    border: none;
+    border-radius: 7px;
+    background-color: $white;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    outline: none;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.05);
+    .create{
+        p {
+            color: $gsectblue;
+        }
+    }
+}
+.email-modal{
+    width: 386px;
+    height: 600px;
+    border: none;
+    border-radius: 5px;
+    background-color: $white;
+    margin: 25px auto;
+    text-align: center;
+    padding: 20px;
+    outline: none;
+    .modalHead{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        .modalTitle{
+            text-align: left;
+        }
+        .closeBtn img{
+            cursor: pointer;
+            width: 20px;
+        }
+    }
+    .formDiv{
+        display: block;
+        justify-content: center;
+        .formBtn{
+            display: flex;
+            justify-content: space-between;
+            button{
+                border-radius: 5px !important; 
+                margin: auto 8px !important;
+            }
+        }
+        .user-Details{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            button{
+                margin: 0 auto;
+                width: 333px;
+                height: 50px;
+            }
+            .info{
+                margin: 0 auto;
+                width: 333px;
+                p{
+                    color: $gsectblack;
+                    margin-bottom: 5px;
+                    color: $gsectblue;
+                    text-align: left;
+                }
+                input{
+                    background: transparent;
+                    color: $gsectgrayish;
+                    margin: 0 auto;
+                    width: 333px;
+                    height: 50px;
+                    border: 1px solid $gsectgrayish;
+                    box-sizing: border-box;
+                    box-shadow: inset 0px 2px 5px #00000005;
+                    border-radius: 5px;
+                    font-size: large;
+                    
+                }
+                input::placeholder{
+                    color: $gsectgrayish;
+                }
+                input:focus{
+                    color: $gsectblue;
+                    font-weight: bold;
+                    border-color: $gsectblue;
+                }
+            }
+            .holder{
+                position: relative;
+                left: 305px;
+                bottom: 33px;
+                width: fit-content;
+                img{
+                   cursor: pointer;
+                   filter: opacity(60%) grayscale(60%);
+                   width: 20px;
+                   &:active{
+                       filter: opacity(100%) grayscale(0%);
+                   }
+                }
+            }
+        }
+    }
+    .space{
+        margin: 30px auto 0px auto;
+        hr{
+            border-color: #02378740;
+            margin: 0 auto;
+            width: 333px;
+        }
+        .or{
+            z-index: 1;
+            background-color: $white;
+            width: 20px;
+            padding: 5px;
+            position: relative;
+            margin: 0 auto;
+            top: -15px;
+            border: none;
+            color: #02378740;
+            font-size: 12px;
+            line-height: 15px;
+            font-weight: 500px;
+            text-align: center;
+        }
+    }
+    .create{
+        position: relative;
+        margin: 0 auto;
+        top: 10px;
+        p{
+            font-weight: 500px;
+            font-size: 15px;
+            line-height: 15px;
+            text-align: center;
+            color: $gsectblue;
+            a{
+                color: $gsectyellow;
+                text-decoration: none;
+            }
+        }
+    }
 }

@@ -18,6 +18,9 @@ export default function Button(props) {
     case "facebook":
       btnclass = "gsect-button facebook";
       break;
+    case "google":
+      btnclass = "gsect-button google";
+      break;
     case "subscribe":
       btnclass = "gsect-button subscribe";
       break;

@@ -12,6 +12,9 @@ import Button from "../components/Button";
 
 export default function Landing() {
   const [openModal, setOpenModal] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
+  const [emailSignup, setEmailSignup] = useState(false);
+
   const [passwordShown, setPasswordShown] = useState(false);
 
   const togglePassword = () => {
@@ -20,23 +23,26 @@ export default function Landing() {
   const choices = [
     {
       id: 0,
-      title: 'Create subcriptions',
-      subtitle: 'Enable access to your email address to automatically add subscriptions or add it manually.',
+      title: "Create subcriptions",
+      subtitle:
+        "Enable access to your email address to automatically add subscriptions or add it manually.",
       icon: require("../assets/images/tool-box.png").default,
     },
     {
       id: 1,
-      title: 'Track subcriptions ',
-      subtitle: 'View all the details of your current, paused and ended subcriptions. Stay updated.',
+      title: "Track subcriptions ",
+      subtitle:
+        "View all the details of your current, paused and ended subcriptions. Stay updated.",
       icon: require("../assets/images/track.png").default,
     },
     {
       id: 2,
-      title: 'Everthing in one place',
-      subtitle: 'Pause and end your subcriptions easily in a few clicks. Review your history & expenses analysis.',
+      title: "Everthing in one place",
+      subtitle:
+        "Pause and end your subcriptions easily in a few clicks. Review your history & expenses analysis.",
       icon: require("../assets/images/tool-box.png").default,
-    }
-  ]
+    },
+  ];
 
   return (
     <>
@@ -72,7 +78,10 @@ export default function Landing() {
             <Button
               label="Get started"
               type="primary"
-              action={() => console.log("test 123")}
+              action={() => {
+                console.log("test 123");
+                setOpenSignup(true);
+              }}
             />
           </div>
         </header>
@@ -85,14 +94,17 @@ export default function Landing() {
             />
             <h1 className="title">Manage your subscriptions in one place</h1>
             <p className="subtitle">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-              purus sit amet luctus venenatis.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
+              aliquam, purus sit amet luctus venenatis.
             </p>
             <div className="actions">
               <Button
                 label="Get started"
                 type="inverted"
-                action={() => console.log("test 123")}
+                action={() => {
+                  console.log("test 123");
+                  setOpenSignup(true);
+                }}
               />
               <div className="show-lg-only">
                 <Button
@@ -140,25 +152,29 @@ export default function Landing() {
             <h1 className="title">Manage your subscriptions in one place</h1>
 
             <div className="subtitle">
-              {choices && choices.map((choice) => (
-                <div className="choices" key={choice.id}>
-                  <div className="choices-img">
-                    {/* <img
+              {choices &&
+                choices.map((choice) => (
+                  <div className="choices" key={choice.id}>
+                    <div className="choices-img">
+                      {/* <img
                       src={choice.icon}
                       alt=""
                     /> */}
+                    </div>
+                    <div className="choices-content">
+                      <h3>{choice.title}</h3>
+                      <p>{choice.subtitle}</p>
+                    </div>
                   </div>
-                  <div className="choices-content">
-                    <h3>{choice.title}</h3>
-                    <p>{choice.subtitle}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
               <div className="actions">
                 <Button
                   label="Get started"
                   type="inverted"
-                  action={() => console.log("test 123")}
+                  action={() => {
+                    console.log("test 123");
+                    setOpenSignup(true);
+                  }}
                 />
               </div>
             </div>
@@ -174,7 +190,14 @@ export default function Landing() {
               nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
               proin enim.
             </p>
-            <Button type="inverted" label="Get Started" />
+            <Button
+              type="inverted"
+              label="Get Started"
+              action={() => {
+                console.log("test 123");
+                setOpenSignup(true);
+              }}
+            />
           </div>
           <div className="manage-image">
             <img
@@ -196,18 +219,13 @@ export default function Landing() {
         </section>
       </div>
       {/* <Footer/> */}
+      {/* login signup and forgot password */}
       <CSSTransition isOpen={openModal} timeout={300}>
         <Modal
           isOpen={openModal}
           onRequestClose={() => setOpenModal(false)}
           closeTimeoutMS={500}
           className="login-popup"
-          style={{
-            overlay: {
-              zIndex: 5,
-              background: "#0000004f",
-            },
-          }}
         >
           <div className="modalHead">
             <div className="modalTitle">
@@ -252,17 +270,278 @@ export default function Landing() {
               </div>
               <Button type="inverted" label="Log In" />
               <p>
-                <a href="/">Forgot password?</a>
+                <Link href="/">Forgot password?</Link>
               </p>
             </div>
           </div>
           <div className="create">
             <p>
-              Don't have an coount? <a href="/">Sign up</a>
+              Don't have an account?{" "}
+              <Link
+                onClick={(e) => {
+                  setOpenSignup(true);
+                  e.preventDefault();
+                  setOpenModal(false);
+                }}
+              >
+                Sign up
+              </Link>
             </p>
           </div>
         </Modal>
       </CSSTransition>
+      <Modal
+        isOpen={openSignup}
+        onRequestClose={() => setOpenSignup(false)}
+        closeTimeoutMS={500}
+        className="login-popup signup"
+      >
+        <div className="modalHead">
+          <div className="modalTitle">
+            <h3>Sign up</h3>
+            <p>Access your free profile.</p>
+          </div>
+          <div className="closeBtn">
+            <img
+              onClick={() => setOpenSignup(false)}
+              src={require("../assets/images/close.png").default}
+              alt="exit-popup"
+            />
+          </div>
+        </div>
+        <div className="formDiv">
+          <div className="formBtn">
+            <Button type="secondary" label="Sign up with Google" />
+            <Button type="facebook" label="Sign up with Facebook" />
+          </div>
+
+          <div className="space">
+            <hr />
+            <div className="or">or</div>
+          </div>
+
+          <div className="loginDetails">
+            <Button type="inverted" label="Sign up with email" />
+          </div>
+        </div>
+        <div className="create">
+          <p>
+            Already have an account?{" "}
+            <Link
+              onClick={(e) => {
+                setOpenModal(true);
+                setOpenSignup(false);
+                e.preventDefault();
+              }}
+            >
+              Log in
+            </Link>
+          </p>
+        </div>
+      </Modal>
+      <CSSTransition isOpen={openModal} timeout={300}>
+        <Modal
+          isOpen={openModal}
+          onRequestClose={() => setOpenModal(false)}
+          closeTimeoutMS={500}
+          className="login-popup"
+        >
+          <div className="modalHead">
+            <div className="modalTitle">
+              <h3>Log In</h3>
+              <p>Access your free profile.</p>
+            </div>
+            <div className="closeBtn">
+              <img
+                onClick={() => setOpenModal(false)}
+                src={require("../assets/images/close.png").default}
+                alt="exit-popup"
+              />
+            </div>
+          </div>
+          <div className="formDiv">
+            <div className="formBtn">
+              <Button type="secondary" label="Continue with Google" />
+              <Button type="facebook" label="Continue with Facebook" />
+            </div>
+
+            <div className="space">
+              <hr />
+              <div className="or">or</div>
+            </div>
+
+            <div className="loginDetails">
+              <input className="email" type="email" placeholder="Email" />
+
+              <input
+                className="password"
+                type={passwordShown ? "text" : "password"}
+                placeholder="Password"
+                src={require("../assets/images/eye.png").default}
+                alt=""
+              />
+              <div className="holder">
+                <img
+                  onClick={togglePassword}
+                  src={require("../assets/images/eye.png").default}
+                  alt=""
+                />
+              </div>
+              <Button type="inverted" label="Log In" />
+              <p>
+                <Link href="/">Forgot password?</Link>
+              </p>
+            </div>
+          </div>
+          <div className="create">
+            <p>
+              Don't have an account?{" "}
+              <Link
+                onClick={(e) => {
+                  setOpenSignup(true);
+                  e.preventDefault();
+                  setOpenModal(false);
+                }}
+              >
+                Sign up
+              </Link>
+            </p>
+          </div>
+        </Modal>
+      </CSSTransition>
+      <Modal
+        isOpen={openSignup}
+        onRequestClose={() => setOpenSignup(false)}
+        closeTimeoutMS={500}
+        className="login-popup signup"
+      >
+        <div className="modalHead">
+          <div className="modalTitle">
+            <h3>Sign up</h3>
+            <p>Access your free profile.</p>
+          </div>
+          <div className="closeBtn">
+            <img
+              onClick={() => setOpenSignup(false)}
+              src={require("../assets/images/close.png").default}
+              alt="exit-popup"
+            />
+          </div>
+        </div>
+        <div className="formDiv">
+          <div className="formBtn">
+            <Button type="secondary" label="Sign up with Google" />
+            <Button type="facebook" label="Sign up with Facebook" />
+          </div>
+
+          <div className="space">
+            <hr />
+            <div className="or">or</div>
+          </div>
+
+          <div className="loginDetails">
+            <Button
+              action={() => {
+                setEmailSignup(true);
+                setOpenSignup(false);
+              }}
+              type="inverted"
+              label="Sign up with email"
+            />
+          </div>
+        </div>
+        <div className="create">
+          <p>
+            Already have an account?{" "}
+            <Link
+              onClick={(e) => {
+                setOpenModal(true);
+                setOpenSignup(false);
+                e.preventDefault();
+              }}
+            >
+              Log in
+            </Link>
+          </p>
+        </div>
+      </Modal>
+      <Modal
+        isOpen={emailSignup}
+        onRequestClose={() => {
+          setEmailSignup(false);
+        }}
+        closeTimeoutMS={500}
+        className="email-modal"
+      >
+        <div className="modalHead">
+          <div className="modalTitle">
+            <h3>Sign up</h3>
+            <p>Access your free profile.</p>
+          </div>
+          <div className="closeBtn">
+            <img
+              onClick={() => setEmailSignup(false)}
+              src={require("../assets/images/close.png").default}
+              alt="exit-popup"
+            />
+          </div>
+        </div>
+        <div className="formDiv">
+          <div className="formBtn">
+            <Button type="google" label="Continue with Google" />
+            <Button type="facebook" label="Continue with Facebook" />
+          </div>
+
+          <div className="space">
+            <hr />
+            <div className="or">or</div>
+          </div>
+
+          <div className="user-Details">
+            <div className="info">
+              <p>Email</p>
+              <input className="email" type="email" placeholder="Email" />
+            </div>
+
+            <div className="info">
+              <p>Name</p>
+              <input className="name" type="text" placeholder="Full Name" />
+            </div>
+
+            <div className="info">
+              <p>Password</p>
+              <input
+                className="password"
+                type={passwordShown ? "text" : "password"}
+                placeholder="Password"
+              />
+              <div className="holder">
+                <img
+                  onClick={togglePassword}
+                  src={require("../assets/images/eye.png").default}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <Button type="inverted" label="Sign up" />
+          </div>
+        </div>
+        <div className="create">
+          <p>
+            Aleady have an account?{" "}
+            <Link
+              onClick={(e) => {
+                e.preventDefault();
+                setEmailSignup(false);
+                setOpenModal(true);
+              }}
+            >
+              Sign in
+            </Link>
+          </p>
+        </div>
+      </Modal>
     </>
   );
 }
