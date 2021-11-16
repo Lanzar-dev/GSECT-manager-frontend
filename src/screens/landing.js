@@ -242,7 +242,7 @@ export default function Landing() {
           </div>
           <div className="formDiv">
             <div className="formBtn">
-              <Button type="secondary" label="Continue with Google" />
+              <Button type="google" label="Continue with Google" />
               <Button type="facebook" label="Continue with Facebook" />
             </div>
 
@@ -311,7 +311,7 @@ export default function Landing() {
         </div>
         <div className="formDiv">
           <div className="formBtn">
-            <Button type="secondary" label="Sign up with Google" />
+            <Button type="google" label="Sign up with Google" />
             <Button type="facebook" label="Sign up with Facebook" />
           </div>
 
@@ -361,7 +361,7 @@ export default function Landing() {
           </div>
           <div className="formDiv">
             <div className="formBtn">
-              <Button type="secondary" label="Continue with Google" />
+              <Button type="google" label="Continue with Google" />
               <Button type="facebook" label="Continue with Facebook" />
             </div>
 
@@ -430,7 +430,7 @@ export default function Landing() {
         </div>
         <div className="formDiv">
           <div className="formBtn">
-            <Button type="secondary" label="Sign up with Google" />
+            <Button type="google" label="Sign up with Google" />
             <Button type="facebook" label="Sign up with Facebook" />
           </div>
 
