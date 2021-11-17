@@ -4,7 +4,8 @@
   border: none;
   background: $white;
   border-radius: 4px;
-  width: 240px;
+  width: 100%;
+  max-width: 240px;
   height: 53px;
   color: $gsectblue;
   cursor: pointer;
@@ -15,9 +16,7 @@
   align-items: center;
   &.inverted {
     background-color: $gsectblue;
-    span {
-      color: $white;
-    }
+    color: $white;
   }
   &.secondary {
     background-color: transparent;
@@ -26,5 +25,13 @@
   &.facebook {
     background-color: $facebook;
     color: $white;
+  }
+  &.google {
+    background-color: $google;
+    color: $gsectblack;
+  }
+  &.subscribe {
+    background-color: $gsectyellow;
+    color: $gsectblue;
   }
 }

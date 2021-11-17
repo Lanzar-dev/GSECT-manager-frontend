@@ -32,6 +32,7 @@
           cursor: pointer;
           &:active,
           &:visited,
+          &:focus,
           &:hover {
             color: $gsectyellow;
           }
@@ -109,7 +110,7 @@
         left: 20px;
         width: 80px;
         height: 60px;
-        @media(min-width: 1024px) {
+        @media (min-width: 1024px) {
           top: 66px;
         }
       }
@@ -145,21 +146,21 @@
           right: 60px;
           bottom: 32px;
           height: unset;
-        width: unset;
+          width: unset;
         }
       }
     }
   }
   .sub {
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
-    width: 100%;
+    // position: relative;
+    width: calc(100% - $padding);
     background: $white;
-    padding: 18px;
+    padding: $padding;
     padding-top: 60px;
     margin: auto;
-    @media(min-width: 1024px) {
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column-reverse;
       width: 80%;
       flex-direction: row;
       align-items: flex-start;
@@ -167,17 +168,24 @@
     }
     .sub-image {
       position: relative;
-      width: 50%;
+      width: 100%;
       height: 100%;
+      @media (min-width: 1024px) {
+        width: 50%;
+      }
       .left-top-left {
-        left: 112px;
-        top: 58px;
-        z-index: 1;
+        width: 40%;
+        height: auto;
+        z-index: 5;
         position: absolute;
+        @media (min-width: 1024px) {
+          left: 112px;
+          top: 58px;
+        }
       }
       .sub-img {
         width: 100%;
-        @media(min-width: 1024px) {
+        @media (min-width: 1024px) {
           width: 446px;
           height: 577px;
         }
@@ -185,8 +193,8 @@
       .bottom-right {
         width: 136px;
         height: 97px;
-        left: 416px;
-        top: 639px;
+        left: 0;
+        top: 0;
         z-index: 1;
         position: relative;
       }
@@ -207,22 +215,38 @@
           justify-content: flex-start;
           align-items: center;
           margin-bottom: 30px;
-          .choices-img {
-            background-color: $gsectyellow;
+          flex-wrap: wrap;
+          @media (min-width: 1024px) {
+            flex-wrap: nowrap;
+          }
+          .choices-cover {
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            background-color: $gsectyellow;
             margin-right: 24px;
-            img {
-              width: 24px;
-              height: 24px;
+            margin-bottom: 0.75rem;
+            @media (min-width: 1024px) {
+              margin-bottom: 0;
+            }
+            .choices-img {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              img {
+                width: 24px;
+                height: 24px;
+              }
             }
           }
           .choices-content {
-            h3, p {
+            h3,
+            p {
               margin: 0;
             }
           }
@@ -234,65 +258,72 @@
     // }
   }
   .manage {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 775px;
-    width: 100%;
     background: #f9f9f9;
-    .manage-text {
-      width: 510px;
-      height: 304px;
-      color: $gsectblue;
-      margin: 0 auto;
-      text-align: left;
-      display: block;
-      justify-content: center;
-      align-content: center;
-      h1 {
-        font-style: normal;
-        font-weight: bold;
-        font-size: 39px;
-        line-height: 45px;
+    padding: 6rem $padding;
+    width: calc(100% - $padding);
+    .manage-content {
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: 96%;
+        margin: auto;
       }
-      p {
-        width: 414px;
-        height: 107px;
+      .manage-text {
+        color: $gsectblue;
+        margin: 0 auto;
         text-align: left;
-        font-size: 16px;
-        line-height: 26px;
-        margin-bottom: 27px;
+        display: block;
+        justify-content: center;
+        align-content: center;
+        @media (min-width: 1024px) {
+          max-width: 40%;
+        }
+        h1 {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 39px;
+          line-height: 45px;
+        }
+        p {
+          text-align: left;
+          font-size: 16px;
+          line-height: 26px;
+          margin-bottom: 27px;
+        }
       }
-    }
-    .manage-image {
-      width: 487px;
-      height: 678px;
-      left: 903px;
-      top: 58px;
-      .top-left {
-        position: absolute;
-        width: 372px;
-        height: 275px;
-        left: 800px;
-        top: 58px;
-        z-index: 1;
-      }
-      .manage-img {
-        z-index: 0;
-        position: absolute;
-        width: 445.58px;
-        height: 577px;
-        left: 850px;
-        top: 99px;
-      }
-      .right-bottom {
-        z-index: 1;
-        position: absolute;
-        width: 136px;
-        height: 97px;
-        left: 1120px;
-        top: 639px;
+      .manage-image {
+        width: 100%;
+        margin: auto;
+        position: relative;
+        @media (min-width: 1024px) {
+          width: 40%;
+          margin-left: auto;
+        }
+        .top-left {
+          position: absolute;
+          width: 40%;
+          z-index: 1;
+          top: -40px;
+          left: -40px;
+          @media (min-width: 1024px) {
+            width: 320px;
+          }
+        }
+        .manage-img {
+          z-index: 0;
+          width: 100%;
+          max-width: 220px;
+          @media (min-width: 1024px) {
+            max-width: 300px;
+          }
+        }
+        .right-bottom {
+          z-index: 1;
+          position: absolute;
+          bottom: -60px;
+          right: 60px;
+        }
       }
     }
   }
