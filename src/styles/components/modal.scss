@@ -202,15 +202,14 @@
                     box-shadow: inset 0px 2px 5px #00000005;
                     border-radius: 5px;
                     font-size: large;
-                    
-                }
-                input::placeholder{
-                    color: $gsectgrayish;
-                }
-                input:focus{
-                    color: $gsectblue;
-                    font-weight: bold;
-                    border-color: $gsectblue;
+                    &:focus{
+                        color: $gsectblue;
+                        font-weight: bold;
+                        border-color: $gsectblue;
+                    }
+                    &::placeholder{
+                        color: $gsectgrayish;
+                    }
                 }
             }
             .holder{
@@ -262,6 +261,107 @@
             line-height: 15px;
             text-align: center;
             color: $gsectblue;
+            a{
+                color: $gsectyellow;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.reset{
+    width: 380px;
+    height: 300px;
+    margin: 175px auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 25px #0000000d;
+    border-radius: 7px;
+    padding: 20px;
+    padding-bottom: 0;
+    border: none;
+    outline: none;
+    text-align: center;
+    .resetDiv{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .modalTitle{
+            h3{
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 23px;
+                color: $gsectblack;
+            }
+        }
+        .closeBtn {
+            img{
+                width: 12px;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .resetForm{
+        display: block;
+        justify-content: center;
+        p{
+            color: $gsectblue;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+        }
+        input{
+            margin: 0 auto;
+            width: 327px;
+            height: 48px;
+            border: 1px solid $gsectgrayish;
+            // padding: 0;
+            border-radius: 5px;
+            font-size: large;
+            &:focus{
+                color: $gsectblue;
+                border-color: $gsectblue;
+            }
+            &::placeholder{
+                color: $gsectgrayish;
+            }
+        }
+        button{
+            margin: 24px auto 50px auto;
+            width: 333px !important;
+            height: 52px !important;
+        }
+    }
+    .resetText{
+        text-align: left;
+        font-size: 16px;
+        line-height: 24px;
+        color: $gsectblack;
+        p:nth-child(1){
+            margin-bottom: 30px;
+        }
+        p:nth-child(2){
+            margin-bottom: 60px;
+        }
+    }
+    .resend{
+        span{
+            color: $gsectpurple;
+            font-weight: bold;
+            a{
+                color: $gsectred;
+            }
+        }
+    }
+    .create{
+        position: relative;
+        margin: 0 auto;
+        top: 20px;
+        p{
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            color: $white;
             a{
                 color: $gsectyellow;
                 text-decoration: none;

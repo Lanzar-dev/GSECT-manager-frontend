@@ -11,6 +11,8 @@ const About = () => {
   const [openSignup, setOpenSignup] = useState(false);
   const [emailSignup, setEmailSignup] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
+  const [resetPassword, setResetPassword] = useState(false);
+  const [resetMessage, setResetMessage] = useState(false)
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -69,7 +71,16 @@ const About = () => {
               </div>
               <Button type="inverted" label="Log In" />
               <p>
-                <Link href="/">Forgot password?</Link>
+                <Link
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setResetPassword(true);
+                    setOpenModal(false);
+                  }}
+                  href="/"
+                >
+                  Forgot password?
+                </Link>
               </p>
             </div>
           </div>
@@ -220,6 +231,93 @@ const About = () => {
               }}
             >
               Sign in
+            </Link>
+          </p>
+        </div>
+      </Modal>
+      {/* reset password */}
+      <Modal isOpen={resetPassword} className="reset">
+        <div className="resetDiv">
+          <div className="modalTitle">
+            <h3>Reset Password</h3>
+          </div>
+          <div className="closeBtn">
+            <img
+              onClick={() => setResetPassword(false)}
+              src={require("../assets/images/close.png").default}
+              alt="exit-popup"
+            />
+          </div>
+        </div>
+        <div>
+          <form className="resetForm">
+            <p>Enter you email address to reset password.</p>
+            <input type="email" placeholder="Email Address" />
+            <Button type="inverted" label="Reset password" action={() => {
+              setResetPassword(false);
+              setResetMessage(true)
+            }} />
+          </form>
+        </div>
+        <div className="create">
+          <p>
+            Dont have an account?{" "}
+            <Link
+              onClick={(e) => {
+                e.preventDefault();
+                setResetPassword(false);
+                setOpenSignup(true);
+              }}
+            >
+              Sign up
+            </Link>
+          </p>
+        </div>
+      </Modal>
+      {/* reset confirmation */}
+      <Modal isOpen={resetMessage} className="reset">
+        <div className="resetDiv">
+          <div className="modalTitle">
+            <h3>Reset Password</h3>
+          </div>
+          <div className="closeBtn">
+            <img
+              onClick={() => setResetMessage(false)}
+              src={require("../assets/images/close.png").default}
+              alt="exit-popup"
+            />
+          </div>
+        </div>
+        <div>
+          <div className="resetText">
+            <p>
+              We have sent a mail to user@gmail.com with a link to reset your
+              password.
+            </p>
+            <p>
+              If you have not received a mail after a few minutes, please check
+              your spam folder.
+            </p>
+          </div>
+        </div>
+        <div className="resend">
+          <span>
+            Didn't get any email?{" "}
+            <Link onClick={(e) => e.preventDefault()}>Resend email</Link>
+          </span>
+        </div>
+
+        <div className="create">
+          <p>
+            Dont have an account?{" "}
+            <Link
+              onClick={(e) => {
+                e.preventDefault();
+                setResetPassword(false);
+                setOpenSignup(true);
+              }}
+            >
+              Sign up
             </Link>
           </p>
         </div>
