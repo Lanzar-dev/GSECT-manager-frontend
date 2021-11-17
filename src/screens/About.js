@@ -313,7 +313,7 @@ const About = () => {
             <Link
               onClick={(e) => {
                 e.preventDefault();
-                setResetPassword(false);
+                setResetMessage(false);
                 setOpenSignup(true);
               }}
             >
