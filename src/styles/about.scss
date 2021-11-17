@@ -67,8 +67,9 @@
         height: 60px;
       }
       .vision{
-          margin: 0 auto;
-          align-self: center;
+          position: relative;
+          left: 40%;
+          z-index: 0;
       }
     }
     .banner-image {
