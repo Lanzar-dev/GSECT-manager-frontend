@@ -26,23 +26,26 @@ export default function Landing() {
   const choices = [
     {
       id: 0,
-      title: 'Create subcriptions',
-      subtitle: 'Enable access to your email address to automatically add subscriptions or add it manually.',
+      title: "Create subcriptions",
+      subtitle:
+        "Enable access to your email address to automatically add subscriptions or add it manually.",
       icon: require("../assets/images/tool-box.png").default,
     },
     {
       id: 1,
-      title: 'Track subcriptions ',
-      subtitle: 'View all the details of your current, paused and ended subcriptions. Stay updated.',
+      title: "Track subcriptions ",
+      subtitle:
+        "View all the details of your current, paused and ended subcriptions. Stay updated.",
       icon: require("../assets/images/track.png").default,
     },
     {
       id: 2,
-      title: 'Everthing in one place',
-      subtitle: 'Pause and end your subcriptions easily in a few clicks. Review your history & expenses analysis.',
+      title: "Everthing in one place",
+      subtitle:
+        "Pause and end your subcriptions easily in a few clicks. Review your history & expenses analysis.",
       icon: require("../assets/images/tool-box.png").default,
-    }
-  ]
+    },
+  ];
 
   return (
     <>
@@ -94,8 +97,8 @@ export default function Landing() {
             />
             <h1 className="title">Manage your subscriptions in one place</h1>
             <p className="subtitle">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              aliquam, purus sit amet luctus venenatis.
+              Tell us what you want to subscribe for, we’ll take care of the
+              rest.
             </p>
             <div className="actions">
               <Button
@@ -106,13 +109,12 @@ export default function Landing() {
                   setOpenSignup(true);
                 }}
               />
-              <div className="show-lg-only">
-                <Button
-                  label="Log In"
-                  type="secondary"
-                  action={() => setOpenModal(true)}
-                />
-              </div>
+              <Button
+                label="Log In"
+                type="secondary"
+                action={() => setOpenModal(true)}
+                className="show-lg-only"
+              />
             </div>
           </div>
 
@@ -157,10 +159,7 @@ export default function Landing() {
                   <div className="choices" key={choice.id}>
                     <div className="choices-cover">
                       <div className="choices-img">
-                        <img
-                          src={choice.icon}
-                          alt=""
-                        />
+                        <img src={choice.icon} alt="" />
                       </div>
                     </div>
                     <div className="choices-content">
@@ -185,6 +184,21 @@ export default function Landing() {
         {/* section-three */}
         <section className="manage">
           <div className="manage-content">
+            <div className="manage-text">
+              <h1>Manage your subscriptions in one place.</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
+                integer rhoncus duis adipiscing facilisis id.
+              </p>
+              <Button
+                type="inverted"
+                label="Get Started"
+                action={() => {
+                  console.log("test 123");
+                  setOpenSignup(true);
+                }}
+              />
+            </div>
             <div className="manage-image">
               <img
                 className="top-left"
@@ -200,23 +214,6 @@ export default function Landing() {
                 className="right-bottom"
                 src={require("../assets/images/small-ring.png").default}
                 alt="gsect dashboard"
-              />
-            </div>
-            <div className="manage-text">
-              <h1>Manage your subscriptions in one place.</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
-                integer rhoncus duis adipiscing facilisis id. Sed molestie auctor
-                nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
-                proin enim.
-              </p>
-              <Button
-                type="inverted"
-                label="Get Started"
-                action={() => {
-                  console.log("test 123");
-                  setOpenSignup(true);
-                }}
               />
             </div>
           </div>

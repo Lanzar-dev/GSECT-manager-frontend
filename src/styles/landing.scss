@@ -40,9 +40,11 @@
       }
     }
     .get-started {
-      display: none;
-      @media (min-width: 1024px) {
-        display: block;
+      button{
+        width: 240px;
+      }
+      @media (max-width: 1024px) {
+        display: none;
       }
     }
   }
@@ -60,7 +62,7 @@
     .content {
       @media (min-width: 1024px) {
         padding-left: 50px;
-        width: 48%;
+        width: 50%;
       }
       h1.title {
         margin-top: 0;
@@ -95,13 +97,21 @@
         display: flex;
         gap: 8px;
         justify-content: center;
-        @media (min-width: 1024px) {
+        @media (max-width: 1024px) {
+          width: 100%;
           justify-content: flex-start;
         }
-        .show-lg-only {
-          @media (max-width: 1023px) {
+        button {
+          &:nth-child(1){
+            @media(max-width:1024px){
+              margin: 10px auto;
+            }
+          }
+          &:nth-child(2){
+          @media (max-width: 1024px) {
             display: none;
           }
+        }
         }
       }
       .right-top-left {
@@ -168,10 +178,10 @@
     }
     .sub-image {
       position: relative;
-      width: 100%;
+      width: 40%;
       height: 100%;
-      @media (min-width: 1024px) {
-        width: 50%;
+      @media(max-width:1024px){
+        width: 100%;
       }
       .left-top-left {
         width: 40%;
@@ -200,28 +210,37 @@
       }
     }
     .sub-content {
-      h1.title {
-        font-size: 40px;
+      width: 60%;
+      @media(max-width:1024px){
+        width: 100%;
+      }
+      .title {
+        font-size: $head-font;
         font-weight: 700;
         text-align: left;
         color: $gsectblue;
         margin-bottom: 60px;
-        width: 80%;
         margin-top: 0;
+        @media (max-width: 1024px) {
+          text-align: center;
+          font-size: 35px;
+          margin: 30px auto;
+        }
       }
       .subtitle {
         .choices {
           display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          margin-bottom: 30px;
-          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 50px;
+          // flex-wrap: wrap;
           @media (min-width: 1024px) {
             flex-wrap: nowrap;
+            width: 100%;
           }
           .choices-cover {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -229,8 +248,9 @@
             background-color: $gsectyellow;
             margin-right: 24px;
             margin-bottom: 0.75rem;
-            @media (min-width: 1024px) {
+            @media (max-width: 1024px) {
               margin-bottom: 0;
+              // width: 10%;
             }
             .choices-img {
               width: 100%;
@@ -245,6 +265,9 @@
             }
           }
           .choices-content {
+            @media (max-width: 1024px) {
+              width: 80%;
+            }
             h3,
             p {
               margin: 0;
@@ -253,18 +276,24 @@
         }
       }
     }
-    // .actions button {
-    //   width: 240px;
-    // }
+    .actions{
+      button{
+        @media(max-width:1024px){
+          margin: 60px auto;
+        }
+      }
+    }
   }
   .manage {
     background: #f9f9f9;
     padding: 6rem $padding;
     width: calc(100% - $padding);
     .manage-content {
-      @media (min-width: 1024px) {
-        display: flex;
-        flex-direction: row-reverse;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 1024px) {
+        display: block;
         align-items: center;
         width: 96%;
         margin: auto;
@@ -279,26 +308,41 @@
         @media (min-width: 1024px) {
           max-width: 40%;
         }
+        button{
+          @media(max-width:1024px){
+            margin: 40px auto;
+            margin-bottom: 100px;
+          }
+        }
         h1 {
           font-style: normal;
-          font-weight: bold;
-          font-size: 39px;
+          font-weight: $weight-bold;
+          font-size: $head-font;
           line-height: 45px;
+          @media(max-width: 1024px){
+            text-align: center;
+            margin: 10px auto;
+            font-size: 35px;
+          }
         }
         p {
           text-align: left;
           font-size: 16px;
           line-height: 26px;
           margin-bottom: 27px;
+          @media(max-width: 1024px){
+            text-align: center;
+            margin: 50px auto;
+          }
         }
       }
       .manage-image {
         width: 100%;
         margin: auto;
         position: relative;
-        @media (min-width: 1024px) {
-          width: 40%;
-          margin-left: auto;
+        @media (max-width: 1024px) {
+          width: 100%;
+          margin: 50px auto;
         }
         .top-left {
           position: absolute;
