@@ -1,135 +1,145 @@
 @import '../styles/variables.scss';
 
 .about-us{
-    width: 100vw;
-  header.header {
-    width: calc(100% - 100px);
+  section.banner{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: $headerHeight;
-    padding: 0 50px;
-    background-color: $gsectblue;
-    .menu {
-      display: flex;
-      justify-content: flex-start;
-      img {
-        width: 70px;
-        height: 24px;
-        margin-right: 60px;
-      }
-      .links {
-        .link {
-          text-decoration: none;
-          color: $white;
-          font-weight: $font-medium;
-          margin-right: 40px;
-          cursor: pointer;
-          &:active, &:hover, &:focus {
-            color: $gsectyellow;
-          }
-        }
-      }
-    }
-  }
-  .banner {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: space-between;
-    height: 632px;
+    justify-content: space-around;
     width: 100%;
-    background: linear-gradient(to right, $white, #FFF6E4);
-    .content {
-      padding-left: 50px;
-      width: 50%;
-      margin: 0 auto;
-      h1.title {
-        margin-top: 72px;
-        font-size: 39px;
-        color: $gsectblue;
-        font-weight: $weight-bold;
-        text-align: center;
-    }
-      p.subtitle {
-        margin: 0 auto;
-        font-size: 16px;
-        margin-bottom: 40px;
-        color: $gsectblue;
-        line-height: 30px;
-        width: 70%;
+    margin: 0;
+    div.note{
+      display: block;
+      // gap: 20px;
+      justify-content: center;
+      text-align: center;
+      // width: 40%;
+      margin: 120px auto;
+      margin-right: 0;
+      h1{
+          font-size: 50px;
+          color: $gsectblue;
+          font-weight: $weight-black;
       }
-      .right-top-left {
-        position: absolute;
-        top: 66px;
-        left: 20px;
-        width: 80px;
-        height: 60px;
+      p, span{
+          color: $gsectblue;
+          font-weight: $weight-semi-bold;
+          margin: 0 auto;
       }
-      .vision{
-          position: relative;
-          left: 40%;
-          z-index: 0;
+      
+      button{
+          margin: 10px auto;
       }
-    }
-    .banner-image {
-      position: relative;
-      width: 50%;
-      height: 100%;
-      .banner-img {
-        position: absolute;
-        top: 32px;
-        width: 100%;
-        height: auto;
-        right: 0;
-        z-index: 1;
-      }
-      .right-bottom-right {
-        position: absolute;
-        right: 60px;
-        bottom: 32px;
-        z-index: 1;
-      }
-    }
   }
-  .note{
-      background-color: #0237870D;
-      width:100%;
-      display: flex;
-      justify-content: space-between;
-      .note-image{
-          width: 40%;
-        .note-img{
-            z-index: 1;
-        }
-        .bottom-right{
-            position: absolute;
-            left: -19px;
-            bottom: 400px;
-            z-index: -1;
-        }
+  div.illustration{
+      // width: 60%;
+      margin: 0 auto;
+      margin-left: 0;
+      img{
+          width: 700px;
       }
-      .note-content{
-          z-index: 1;
-          width: 60%;
-          justify-content: center;
-          align-items: center;
-          margin: 0 0 0 120px;
-          h1{
-              color: $gsectblue;
-              font-size: 39px;
-          }
-          h2{
-              color: $gsectblack;
-              font-size: 24px;
-          }
-          p{
-              font-size: 16px;
-              line-height: 30px;
-              width: 604px;
-            //   height: 191px;
-              color: $gsectblue;
-          }
-      }
+    }
   }
 }
+
+// .about-us{
+//   width: 100vw;
+//   .banner {
+//     display: flex;
+//     position: relative;
+//     align-items: center;
+//     justify-content: space-between;
+//     height: 632px;
+//     width: 100%;
+//     background: linear-gradient(to right, $white, #FFF6E4);
+//     .content {
+//       padding-left: 50px;
+//       width: 50%;
+//       margin: 0 auto;
+//       h1.title {
+//         margin-top: 72px;
+//         font-size: 39px;
+//         color: $gsectblue;
+//         font-weight: $weight-bold;
+//         text-align: center;
+//     }
+//       p.subtitle {
+//         margin: 0 auto;
+//         font-size: 16px;
+//         margin-bottom: 40px;
+//         color: $gsectblue;
+//         line-height: 30px;
+//         width: 70%;
+//       }
+//       .right-top-left {
+//         position: absolute;
+//         top: 66px;
+//         left: 20px;
+//         width: 80px;
+//         height: 60px;
+//       }
+//       .vision{
+//           position: relative;
+//           left: 40%;
+//           z-index: 0;
+//       }
+//     }
+//     .banner-image {
+//       position: relative;
+//       width: 50%;
+//       height: 100%;
+//       .banner-img {
+//         position: absolute;
+//         top: 32px;
+//         width: 100%;
+//         height: auto;
+//         right: 0;
+//         z-index: 1;
+//       }
+//       .right-bottom-right {
+//         position: absolute;
+//         right: 60px;
+//         bottom: 32px;
+//         z-index: 1;
+//       }
+//     }
+//   }
+//   .note{
+//       background-color: #0237870D;
+//       width:100%;
+//       display: flex;
+//       justify-content: space-between;
+//       .note-image{
+//           width: 40%;
+//         .note-img{
+//             z-index: 1;
+//         }
+//         .bottom-right{
+//             position: absolute;
+//             left: -19px;
+//             bottom: 400px;
+//             z-index: -1;
+//         }
+//       }
+//       .note-content{
+//           z-index: 1;
+//           width: 60%;
+//           justify-content: center;
+//           align-items: center;
+//           margin: 0 0 0 120px;
+//           h1{
+//               color: $gsectblue;
+//               font-size: 39px;
+//           }
+//           h2{
+//               color: $gsectblack;
+//               font-size: 24px;
+//           }
+//           p{
+//               font-size: 16px;
+//               line-height: 30px;
+//               width: 604px;
+//             //   height: 191px;
+//               color: $gsectblue;
+//           }
+//       }
+//   }
+// }
