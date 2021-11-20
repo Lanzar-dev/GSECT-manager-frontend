@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles//about.scss";
 import Footer from "../components/Footer";
 import Modal from "react-modal";
 import { CSSTransition } from "react-transition-group";
 import Button from "../components/Button";
+import Header from "./../components/Header";
 
-const About = () => {
+const About = (props) => {
   const [openModal, setOpenModal] = useState(false);
   const [openSignup, setOpenSignup] = useState(false);
   const [emailSignup, setEmailSignup] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const [resetPassword, setResetPassword] = useState(false);
-  const [resetMessage, setResetMessage] = useState(false)
+  const [resetMessage, setResetMessage] = useState(false);
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -253,10 +254,14 @@ const About = () => {
           <form className="resetForm">
             <p>Enter you email address to reset password.</p>
             <input type="email" placeholder="Email Address" />
-            <Button type="inverted" label="Reset password" action={() => {
-              setResetPassword(false);
-              setResetMessage(true)
-            }} />
+            <Button
+              type="inverted"
+              label="Reset password"
+              action={() => {
+                setResetPassword(false);
+                setResetMessage(true);
+              }}
+            />
           </form>
         </div>
         <div className="create">
@@ -324,80 +329,28 @@ const About = () => {
       </Modal>
 
       {/* main content */}
-      <header className="header">
-        <div className="menu">
-          <img
-            src={require("../assets/images/logo.png").default}
-            alt="logo-white"
+      <Header />
+      <section className="banner">
+        <div className="note">
+          <h1>About Us</h1>
+          <p>We cannot find the page you're looking for.</p>
+          <span>Please check back later.</span>
+          <Button
+            type="inverted"
+            label="Go Home"
+            action={() => props.history.push("/")}
           />
-          <div className="links">
-            <NavLink to="/" className="link">
-              Home
-            </NavLink>
-            <NavLink to="/about" className="link">
-              About Us
-            </NavLink>
-            <NavLink to="/support" className="link">
-              Support
-            </NavLink>
-            <Link
-              onClick={(e) => {
-                setOpenModal(true);
-                e.preventDefault();
-              }}
-              className="link"
-            >
-              Log in
-            </Link>
+        </div>
+        <div className="illustration">
+          <div className="img-holder">
+            <img
+              src={require("../assets/images/error.png").default}
+              alt="coming soon"
+            />
           </div>
         </div>
-        <div className="get-started">
-          <Button
-            label="Get started"
-            type="primary"
-            action={() => setOpenSignup(true)}
-          />
-        </div>
-      </header>
-      <section className="banner">
-        <div className="content">
-          <img
-            className="right-top-left"
-            src={require("../assets/images/small-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            src={require("../assets/images/vision.png").default}
-            alt="vision-pyramid"
-            className="vision"
-          />
-          <h1 className="title">Our Vision</h1>
-          <p className="subtitle">
-            In Lorem amet dolor labore elit. Consectetur ad consequat ex sit
-            sunt dolore. Labore ipsum voluptate culpa veniam fugiat est In Lorem
-            amet dolor labore elit. Consectetur ad consequat ex sit sunt dolore.
-            Labore ipsum voluptate culpa veniam fugiat est In Lorem amet dolor
-            labore elit. Consectetur ad consequat ex sit sunt dolore. Labore
-            ipsum voluptate culpa veniam fugiat est In Lorem amet dolor labore
-            elit. Consectetur ad consequat ex sit sunt dolore. Labore ipsum
-            voluptate culpa veniam fugiat est
-          </p>
-        </div>
-
-        <div className="banner-image">
-          <img
-            className="right-bottom-right"
-            src={require("../assets/images/big-ring.png").default}
-            alt="gsect dashboard"
-          />
-          <img
-            className="banner-img"
-            src={require("../assets/images/banner-img.png").default}
-            alt="gsect dashboard"
-          />
-        </div>
       </section>
-      <section className="note">
+      {/* <section className="note">
         <div className="note-image">
           <img
             src={require("../assets/images/note-img.png").default}
@@ -424,7 +377,7 @@ const About = () => {
             voluptate culpa veniam fugiat est
           </p>
         </div>
-      </section>
+      </section> */}
       <Footer />
     </div>
   );

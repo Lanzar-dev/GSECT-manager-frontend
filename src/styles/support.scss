@@ -1,0 +1,42 @@
+@import '../styles//variables.scss';
+
+.support{
+    section.banner{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 0;
+      div.note{
+        display: block;
+        // gap: 20px;
+        justify-content: center;
+        text-align: center;
+        // width: 40%;
+        margin: 120px auto;
+        margin-right: 0;
+        h1{
+            font-size: 50px;
+            color: $gsectblue;
+            font-weight: $weight-black;
+        }
+        p{
+            color: $gsectblue;
+            font-weight: $weight-semi-bold;
+            &:nth-child(1){
+                margin-bottom: 0;
+            }
+        }
+        button{
+            margin: 10px auto;
+        }
+    }
+    div.illustration{
+        // width: 60%;
+        margin: 0 auto;
+        margin-left: 0;
+        img{
+            width: 700px;
+        }
+      }
+    }
+  }

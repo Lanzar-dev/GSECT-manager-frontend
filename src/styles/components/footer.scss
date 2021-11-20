@@ -2,15 +2,15 @@
 
 .footer{
     background-color: $gsectblue;
-    // height: 462px;
     width: 100vw;
-    // position: absolute;
     bottom: 0px;
     color: $white;
     padding: 5px;
     .main, .minor{
         display: flex;
         justify-content: space-between;
+        margin-left: 50px;
+        margin-right: 50px;
     }
     .main{
         form{
@@ -31,7 +31,6 @@
             }
         }
         .company, .legal, .earn, .join{
-            margin: 0 auto;
             h2{
                 font-size: 20px;
             }
@@ -56,12 +55,34 @@
         }
     }
     .minor{
-        div{
-            margin: 0 auto;
+        align-items: flex-end;
+        div:nth-child(1){
+            align-items: left;
+        }
+        div.links{
+            align-items: right;
+            margin: 0 0 0 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            a{
+               margin: 0 10px; 
+               &:nth-child(2){
+                img{
+                    width: 15px;
+                }
+            }
+            }
+            
+            img{
+                width: 22px;
+                
+            }
         }
     }
     
     hr{
         border: 1px solid $gsectyellow;
+        margin: 10px 50px;
     }
 }
