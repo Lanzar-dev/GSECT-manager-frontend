@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/components/footer.scss";
 import Button from "./Button";
 
@@ -45,10 +46,25 @@ const Footer = () => {
           <p>All your subscriptions in one click</p>
           <p>&copy;2021 GSECTmanager. All rights reserved</p>
         </div>
-        <div>
-          <h3>GSECTmanager</h3>
-          <p>All your subscriptions in one click</p>
-          <p>&copy;2021 GSECTmanager. All rights reserved</p>
+        <div className="links" >
+          <Link>
+            <img
+              src={require("../assets/images/instagram.png").default}
+              alt="instagram"
+            />
+          </Link>
+          <Link>
+            <img
+              src={require("../assets/images/facebook.png").default}
+              alt="instagram"
+            />
+          </Link>
+          <Link>
+            <img
+              src={require("../assets/images/twitter.png").default}
+              alt="instagram"
+            />
+          </Link>
         </div>
       </section>
       <hr />
