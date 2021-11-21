@@ -10,6 +10,7 @@ import "../styles/components/modal.scss";
 import Button from "../components/Button";
 // import Footer from "../components/Footer";
 import Header from "./../components/Header";
+import Footer from "./../components/Footer";
 
 export default function Landing() {
   const [openModal, setOpenModal] = useState(false);
@@ -147,49 +148,60 @@ export default function Landing() {
         </section>
         {/* section-three */}
         <section className="manage">
-            <div className="manage-text">
-              <h1>Manage your subscriptions in one place.</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor integer rhoncus duis adipiscing facilisis id. Sed molestie auctor nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien, proin enim.
-              </p>
-              <Button
-                type="inverted"
-                label="Get Started"
-                action={() => {
-                  console.log("test 123");
-                  setOpenSignup(true);
-                }}
-              />
-            </div>
-            <div className="manage-image">
-              <img
-                className="top-left"
-                src={require("../assets/images/medium-ring.png").default}
-                alt="gsect dashboard"
-              />
-              <img
-                className="manage-img"
-                src={require("../assets/images/Intersect.png").default}
-                alt="gsect dashboard"
-              />
-              <img
-                className="right-bottom"
-                src={require("../assets/images/small-ring.png").default}
-                alt="gsect dashboard"
-              />
-            </div>
+          <div className="manage-text">
+            <h1>Manage your subscriptions in one place.</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
+              integer rhoncus duis adipiscing facilisis id. Sed molestie auctor
+              nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien,
+              proin enim.
+            </p>
+            <Button
+              type="inverted"
+              label="Get Started"
+              action={() => {
+                console.log("test 123");
+                setOpenSignup(true);
+              }}
+            />
+          </div>
+          <div className="manage-image">
+            <img
+              className="top-left"
+              src={require("../assets/images/medium-ring.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="manage-img"
+              src={require("../assets/images/Intersect.png").default}
+              alt="gsect dashboard"
+            />
+            <img
+              className="right-bottom"
+              src={require("../assets/images/small-ring.png").default}
+              alt="gsect dashboard"
+            />
+          </div>
         </section>
         <section className="reviews">
-          <div>
+          <div className="text">
             <h1>Hear what our customers are saying about us.</h1>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor integer rhoncus duis adipiscing facilisis id. Sed molestie auctor nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien, proin enim.
+              We’d love for you to hear how other people are faring with out
+              services. Without “U”, there’s no GSECT.
             </p>
           </div>
-          <div></div>
+          <div className="ratings">
+            <img
+              src={require("../assets/images/Chigozie.png").default}
+              alt=""
+            />
+            <img src={require("../assets/images/anita.png").default} alt="" />
+            <img src={require("../assets/images/prince.png").default} alt="" />
+          </div>
         </section>
       </div>
-      {/* <Footer/> */}
+      <Footer />
       {/* login signup and forgot password */}
       <CSSTransition isOpen={openModal} timeout={300}>
         <Modal
