@@ -2,7 +2,8 @@
 
 .footer{
     background-color: $gsectblue;
-    width: 100vw;
+    width: calc(100% - $padding);
+    max-width: 1440px;
     bottom: 0px;
     color: $white;
     padding: 5px;
