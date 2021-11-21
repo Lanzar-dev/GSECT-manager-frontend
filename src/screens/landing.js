@@ -147,12 +147,10 @@ export default function Landing() {
         </section>
         {/* section-three */}
         <section className="manage">
-          <div className="manage-content">
             <div className="manage-text">
               <h1>Manage your subscriptions in one place.</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor
-                integer rhoncus duis adipiscing facilisis id.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor integer rhoncus duis adipiscing facilisis id. Sed molestie auctor nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien, proin enim.
               </p>
               <Button
                 type="inverted"
@@ -180,7 +178,15 @@ export default function Landing() {
                 alt="gsect dashboard"
               />
             </div>
+        </section>
+        <section className="reviews">
+          <div>
+            <h1>Hear what our customers are saying about us.</h1>
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolor integer rhoncus duis adipiscing facilisis id. Sed molestie auctor nam hac. Amet, sed ac tempor massa. Odio senectus dictume sapien, proin enim.
+            </p>
           </div>
+          <div></div>
         </section>
       </div>
       {/* <Footer/> */}

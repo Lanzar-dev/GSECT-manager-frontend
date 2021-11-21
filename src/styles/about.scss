@@ -7,7 +7,6 @@
     width: 100%;
     margin: 0;
     div.note{
-      display: block;
       // gap: 20px;
       justify-content: center;
       text-align: center;
@@ -19,7 +18,7 @@
           color: $gsectblue;
           font-weight: $weight-black;
       }
-      p, span{
+      p{
           color: $gsectblue;
           font-weight: $weight-semi-bold;
           margin: 0 auto;

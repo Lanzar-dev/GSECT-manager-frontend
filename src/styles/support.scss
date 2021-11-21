@@ -22,9 +22,7 @@
         p{
             color: $gsectblue;
             font-weight: $weight-semi-bold;
-            &:nth-child(1){
-                margin-bottom: 0;
-            }
+            margin: 0 auto;
         }
         button{
             margin: 10px auto;
