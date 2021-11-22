@@ -178,9 +178,9 @@ const Header = (props) => {
               Don't have an account?{" "}
               <Link
                 onClick={(e) => {
-                  setOpenSignup(true);
                   e.preventDefault();
                   setOpenModal(false);
+                  setOpenSignup(true);
                 }}
               >
                 Sign up
