@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import "../styles/components/header.scss";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import Button from "./Button";
 import Modal from "react-modal";
 import { CSSTransition } from "react-transition-group";
-import { useDispatch, useSelector } from "react-redux";
 import { register, signin } from "../redux/actions/userActions";
 
-import { useHistory } from "react-router-dom";
+import "../styles/components/header.scss";
 
 const Header = (props) => {
   const [openModal, setOpenModal] = useState(false);
@@ -56,13 +56,16 @@ const Header = (props) => {
 
   useEffect(() => {
     if (userInfo) {
-      history.push("/");
+      history.push("/dashboard");
+      setOpenModal(false);
+      console.log("logged in")
     }
   }, [history, userInfo]);
 
   useEffect(() => {
     if (userSignInfo) {
-      history.push("/");
+      setEmailSignup(false);
+      setOpenModal(true);
     }
   }, [history, userSignInfo]);
 
@@ -103,6 +106,7 @@ const Header = (props) => {
           }}
         />
       </div>
+      {/* Login */}
       <CSSTransition isOpen={openModal} timeout={300}>
         <Modal
           isOpen={openModal}
@@ -166,133 +170,6 @@ const Header = (props) => {
                   onClick={(e) => {
                     e.preventDefault();
                     setResetPassword(true);
-                  }}
-                >
-                  Forgot password?
-                </Link>
-              </p>
-            </div>
-          </div>
-          <div className="create">
-            <p>
-              Don't have an account?{" "}
-              <Link
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenModal(false);
-                  setOpenSignup(true);
-                }}
-              >
-                Sign up
-              </Link>
-            </p>
-          </div>
-        </Modal>
-      </CSSTransition>
-      <Modal
-        isOpen={openSignup}
-        onRequestClose={() => setOpenSignup(false)}
-        closeTimeoutMS={500}
-        className="login-popup signup"
-      >
-        <div className="modalHead">
-          <div className="modalTitle">
-            <h3>Sign up</h3>
-            <p>Access your free profile.</p>
-          </div>
-          <div className="closeBtn">
-            <img
-              onClick={() => setOpenSignup(false)}
-              src={require("../assets/images/close.png").default}
-              alt="exit-popup"
-            />
-          </div>
-        </div>
-        <div className="formDiv">
-          <div className="formBtn">
-            <Button type="google" label="Sign up with Google" />
-            <Button type="facebook" label="Sign up with Facebook" />
-          </div>
-
-          <div className="space">
-            <hr />
-            <div className="or">or</div>
-          </div>
-
-          <div className="loginDetails">
-            <Button type="inverted" label="Sign up with email" />
-          </div>
-        </div>
-        <div className="create">
-          <p>
-            Already have an account?{" "}
-            <Link
-              onClick={(e) => {
-                setOpenModal(true);
-                setOpenSignup(false);
-                e.preventDefault();
-              }}
-            >
-              Log in
-            </Link>
-          </p>
-        </div>
-      </Modal>
-      <CSSTransition isOpen={openModal} timeout={300}>
-        <Modal
-          isOpen={openModal}
-          onRequestClose={() => setOpenModal(false)}
-          closeTimeoutMS={500}
-          className="login-popup"
-        >
-          <div className="modalHead">
-            <div className="modalTitle">
-              <h3>Log In</h3>
-              <p>Access your free profile.</p>
-            </div>
-            <div className="closeBtn">
-              <img
-                onClick={() => setOpenModal(false)}
-                src={require("../assets/images/close.png").default}
-                alt="exit-popup"
-              />
-            </div>
-          </div>
-          <div className="formDiv">
-            <div className="formBtn">
-              <Button type="google" label="Continue with Google" />
-              <Button type="facebook" label="Continue with Facebook" />
-            </div>
-
-            <div className="space">
-              <hr />
-              <div className="or">or</div>
-            </div>
-
-            <div className="loginDetails">
-              <input className="email" type="email" placeholder="Email" />
-
-              <input
-                className="password"
-                type={passwordShown ? "text" : "password"}
-                placeholder="Password"
-                src={require("../assets/images/eye.png").default}
-                alt=""
-              />
-              <div className="holder">
-                <img
-                  onClick={togglePassword}
-                  src={require("../assets/images/eye.png").default}
-                  alt=""
-                />
-              </div>
-              <Button type="inverted" label="Log In" />
-              <p>
-                <Link
-                  // href="/"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setResetPassword(true);
                     setOpenModal(false);
                   }}
                 >
@@ -306,9 +183,9 @@ const Header = (props) => {
               Don't have an account?{" "}
               <Link
                 onClick={(e) => {
-                  setOpenSignup(true);
                   e.preventDefault();
                   setOpenModal(false);
+                  setOpenSignup(true);
                 }}
               >
                 Sign up
@@ -317,6 +194,7 @@ const Header = (props) => {
           </div>
         </Modal>
       </CSSTransition>
+      {/* Signup */}
       <Modal
         isOpen={openSignup}
         onRequestClose={() => setOpenSignup(false)}
@@ -349,12 +227,12 @@ const Header = (props) => {
 
           <div className="loginDetails">
             <Button
+              type="inverted"
+              label="Sign up with email"
               action={() => {
                 setEmailSignup(true);
                 setOpenSignup(false);
               }}
-              type="inverted"
-              label="Sign up with email"
             />
           </div>
         </div>
@@ -373,6 +251,7 @@ const Header = (props) => {
           </p>
         </div>
       </Modal>
+      {/* Sign up with email */}
       <Modal
         isOpen={emailSignup}
         onRequestClose={() => {
@@ -449,7 +328,7 @@ const Header = (props) => {
             <Button
               type="inverted"
               label="Sign up"
-              // onClick={() => submitHandler()}
+              onClick={() => submitHandler()}
             />
           </div>
         </div>

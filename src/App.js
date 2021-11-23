@@ -2,8 +2,7 @@ import "./styles/styles.scss";
 import Landing from "./screens/landing";
 import About from './screens/About'
 import Support from './screens/Support';
-// import Footer from "./components/Footer";
-// import Dashboard from "./screens/Dashboard";
+import DashBoard from "./screens/active-user/DashBoard";
 
 //router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -16,10 +15,9 @@ function App() {
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
           <Route exact path="/support" component={Support} />
-          {/* <Route exact path="/dashboard" component={Dashboard} /> */}
+          <Route exact path="/dashboard" component={DashBoard} />
         </Switch>
       </Router>
-      {/* <Footer /> */}
     </div>
   );
 }
