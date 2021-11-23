@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/components/header.scss";
 import { NavLink, Link } from "react-router-dom";
 import Button from "./Button";
 import Modal from "react-modal";
 import { CSSTransition } from "react-transition-group";
+import { useDispatch, useSelector } from "react-redux";
+import { register, signin } from "../redux/actions/userActions";
 
-const Header = () => {
+import { useHistory } from "react-router-dom";
+
+const Header = (props) => {
   const [openModal, setOpenModal] = useState(false);
   const [openSignup, setOpenSignup] = useState(false);
   const [emailSignup, setEmailSignup] = useState(false);
@@ -14,9 +18,54 @@ const Header = () => {
 
   const [passwordShown, setPasswordShown] = useState(false);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let history = useHistory();
+
+  // const redirect = props.location.search
+  //   ? props.location.search.split("=")[1]
+  //   : "/";
+
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
   };
+
+  const userRegister = useSelector((state) => state.userRegister);
+  const { userInfo, loading, error } = userRegister;
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const {
+    userInfo: userSignInfo,
+    loading: loadingSignin,
+    error: errorSignin,
+  } = userSignin;
+
+  const dispatch = useDispatch();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(register(name, email, password));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(signin(email, password));
+  };
+
+  useEffect(() => {
+    if (userInfo) {
+      history.push("/");
+    }
+  }, [history, userInfo]);
+
+  useEffect(() => {
+    if (userSignInfo) {
+      history.push("/");
+    }
+  }, [history, userSignInfo]);
+
   return (
     <header className="header">
       <div className="menu">
@@ -50,7 +99,6 @@ const Header = () => {
           label="Get started"
           type="primary"
           action={() => {
-            console.log("test 123");
             setOpenSignup(true);
           }}
         />
@@ -75,7 +123,7 @@ const Header = () => {
               />
             </div>
           </div>
-          <div className="formDiv">
+          <div className="formDiv" onClick={handleSubmit}>
             <div className="formBtn">
               <Button type="google" label="Continue with Google" />
               <Button type="facebook" label="Continue with Facebook" />
@@ -87,7 +135,13 @@ const Header = () => {
             </div>
 
             <div className="loginDetails">
-              <input className="email" type="email" placeholder="Email" />
+              <input
+                className="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
               <input
                 className="password"
@@ -95,6 +149,8 @@ const Header = () => {
                 placeholder="Password"
                 src={require("../assets/images/eye.png").default}
                 alt=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="holder">
                 <img
@@ -338,7 +394,7 @@ const Header = () => {
             />
           </div>
         </div>
-        <div className="formDiv">
+        <div className="formDiv" onClick={submitHandler}>
           <div className="formBtn">
             <Button type="google" label="Continue with Google" />
             <Button type="facebook" label="Continue with Facebook" />
@@ -352,12 +408,24 @@ const Header = () => {
           <div className="user-Details">
             <div className="info">
               <p>Email</p>
-              <input className="email" type="email" placeholder="Email" />
+              <input
+                className="email"
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
 
             <div className="info">
               <p>Name</p>
-              <input className="name" type="text" placeholder="Full Name" />
+              <input
+                className="name"
+                type="text"
+                placeholder="Full Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
 
             <div className="info">
@@ -366,6 +434,8 @@ const Header = () => {
                 className="password"
                 type={passwordShown ? "text" : "password"}
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div className="holder">
                 <img
@@ -376,7 +446,11 @@ const Header = () => {
               </div>
             </div>
 
-            <Button type="inverted" label="Sign up" />
+            <Button
+              type="inverted"
+              label="Sign up"
+              // onClick={() => submitHandler()}
+            />
           </div>
         </div>
         <div className="create">

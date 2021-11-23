@@ -70,7 +70,7 @@ export default function Landing() {
                 label="Get started"
                 type="inverted"
                 action={() => {
-                  console.log("test 123");
+                  // console.log("test 123");
                   setOpenSignup(true);
                 }}
               />
@@ -138,7 +138,7 @@ export default function Landing() {
                   label="Get started"
                   type="inverted"
                   action={() => {
-                    console.log("test 123");
+                    // console.log("test 123");
                     setOpenSignup(true);
                   }}
                 />

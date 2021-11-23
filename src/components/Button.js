@@ -3,7 +3,8 @@ import "../styles/components/button.scss";
 
 export default function Button(props) {
   const { label, action, type = "primary" } = props;
-  console.log(label);
+  // console.log(action);
+  // console.log(label);
   let btnclass = "gsect-button";
   switch (type) {
     case "secondary":
@@ -33,4 +34,3 @@ export default function Button(props) {
     </button>
   );
 }
-
