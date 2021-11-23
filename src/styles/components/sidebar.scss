@@ -1,0 +1,92 @@
+@import '../variables.scss';
+
+.side-bar {
+    // position: absolute;
+    margin: 0;
+    width: 300px;
+    height: 795px;
+    background-color: $gsectblue;
+    color: $white;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 5px;
+    //border: 3px solid black;
+    list-style-type: none;
+    a:link {
+        text-decoration: none;
+        color: $white;
+    }
+
+}
+
+.gsect-sidebar{
+    // position: absolute;
+    width: 103px;
+    height: 85px;
+    margin: 0 auto;
+    // padding-top: 20px;
+    left: 85px;
+    right: 33px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    font-weight: $weight-normal;
+}
+
+
+.dashboard {
+    width: 123px;
+    height: 20px;
+    margin: 20px 50px;
+    padding-top: 40px;
+    // border: 3px solid black;
+    font-size:$font-base;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.activesubscription {
+    width: 160px;
+    height: 18px;
+    margin: 20px 50px;
+    top: 183px;
+   // border: 3px solid black;
+    font-size:$font-base;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.history-analytics {
+    width: 160px;
+    height: 18px;
+    margin: 20px 50px;
+    top: 183px;
+    //border: 3px solid black;
+    font-size:$font-base;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.settings {
+    width: 114px;
+    height: 37px;
+    margin: 20px 50px;
+    //border: 3px solid black;
+    font-size:$font-base;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.logout{
+    width: 102px;
+    height: 24px;
+    margin: 20px 50px;
+    //border: 3px solid black;
+    font-size:$font-base;
+    margin-top: 280px;
+    left: 35px;
+    display: flex;
+    justify-content: center;
+}
