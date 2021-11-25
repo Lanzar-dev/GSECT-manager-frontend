@@ -1,16 +1,20 @@
-import React from 'react'
-import SearchBar from '../../components/SearchBar'
-
+import React from "react";
+import SearchBar from "../../components/SearchBar";
+import SideBar from "../../components/SideBar";
 
 const DashBoard = () => {
-    return (
-        <div className="dashboard">
-            <SearchBar />
-            <section>
-                another thing
-            </section>
-        </div>
-    )
-}
+  return (
+    <div className="dashboard">
+      <section className="sidebar">
+        <SideBar />
+      </section>
 
-export default DashBoard
+      <section className="main-page">
+        <SearchBar />
+        <div></div>
+      </section>
+    </div>
+  );
+};
+
+export default DashBoard;

@@ -56,16 +56,16 @@ const Header = (props) => {
 
   useEffect(() => {
     if (userInfo) {
-      history.push("/dashboard");
-      setOpenModal(false);
-      console.log("logged in")
-    }
-  }, [history, userInfo]);
-
-  useEffect(() => {
-    if (userSignInfo) {
       setEmailSignup(false);
       setOpenModal(true);
+    }
+  }, [history, userInfo]);
+  
+  useEffect(() => {
+    if (userSignInfo) {
+    history.push("/dashboard");
+    setOpenModal(false);
+    console.log("logged in")
     }
   }, [history, userSignInfo]);
 
@@ -127,7 +127,7 @@ const Header = (props) => {
               />
             </div>
           </div>
-          <div className="formDiv" onClick={handleSubmit}>
+          <form className="formDiv" onSubmit={handleSubmit}>
             <div className="formBtn">
               <Button type="google" label="Continue with Google" />
               <Button type="facebook" label="Continue with Facebook" />
@@ -177,7 +177,7 @@ const Header = (props) => {
                 </Link>
               </p>
             </div>
-          </div>
+          </form>
           <div className="create">
             <p>
               Don't have an account?{" "}
@@ -273,7 +273,7 @@ const Header = (props) => {
             />
           </div>
         </div>
-        <div className="formDiv" onClick={submitHandler}>
+        <form className="formDiv" onSubmit={submitHandler}>
           <div className="formBtn">
             <Button type="google" label="Continue with Google" />
             <Button type="facebook" label="Continue with Facebook" />
@@ -331,7 +331,7 @@ const Header = (props) => {
               onClick={() => submitHandler()}
             />
           </div>
-        </div>
+        </form>
         <div className="create">
           <p>
             Aleady have an account?{" "}

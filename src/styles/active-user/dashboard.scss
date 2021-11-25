@@ -1,1 +1,18 @@
 @import '../styles/variables.scss';
+
+.dashboard{
+    width: calc(100vw - $padding);
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    section.sidebar{
+        width: 20%;
+    }
+    section.main-page{
+        display: block;
+        width: 80%;
+        max-width: 1163px;
+    }
+}

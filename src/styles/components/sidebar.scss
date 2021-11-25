@@ -1,92 +1,69 @@
 @import '../variables.scss';
 
 .side-bar {
-    // position: absolute;
     margin: 0;
-    width: 300px;
-    height: 795px;
+    padding: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    max-width: 277px;
+    height: 100%;
+    max-height: 795px;
     background-color: $gsectblue;
     color: $white;
-    border-top-right-radius: 7px;
-    border-bottom-right-radius: 5px;
-    //border: 3px solid black;
-    list-style-type: none;
-    a:link {
-        text-decoration: none;
-        color: $white;
+    display: block;
+    .gsect{
+        width: 90px;
+        margin: 14px auto;
+        img{
+            width: 70px;
+            height: 24px;
+            margin: 0 auto;
+        }
     }
-
-}
-
-.gsect-sidebar{
-    // position: absolute;
-    width: 103px;
-    height: 85px;
-    margin: 0 auto;
-    // padding-top: 20px;
-    left: 85px;
-    right: 33px;
-    border: 3px solid black;
-    display: flex;
-    justify-content: center;
-    font-weight: $weight-normal;
-}
-
-
-.dashboard {
-    width: 123px;
-    height: 20px;
-    margin: 20px 50px;
-    padding-top: 40px;
-    // border: 3px solid black;
-    font-size:$font-base;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.activesubscription {
-    width: 160px;
-    height: 18px;
-    margin: 20px 50px;
-    top: 183px;
-   // border: 3px solid black;
-    font-size:$font-base;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-.history-analytics {
-    width: 160px;
-    height: 18px;
-    margin: 20px 50px;
-    top: 183px;
-    //border: 3px solid black;
-    font-size:$font-base;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.settings {
-    width: 114px;
-    height: 37px;
-    margin: 20px 50px;
-    //border: 3px solid black;
-    font-size:$font-base;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.logout{
-    width: 102px;
-    height: 24px;
-    margin: 20px 50px;
-    //border: 3px solid black;
-    font-size:$font-base;
-    margin-top: 280px;
-    left: 35px;
-    display: flex;
-    justify-content: center;
+    .list{
+        margin: 0 auto;
+        margin-top: 110px;
+        // text-align: center;
+        a{
+            width: 100%;
+            max-width: 260px;
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 24px auto;
+            
+            color: $white;
+            text-decoration: none;
+            font-weight: $weight-normal;
+            span, label{
+                margin: 0px 10px ;
+                height: 20px;
+            }
+            span{
+                img{
+                    width: 20px;
+                }
+            }
+            label{
+                text-align: left;
+            }
+            &:hover, &:active, &active{
+                border-left: 5px solid $gsectyellow;
+                color: $gsectyellow;
+                span img{
+                    color: $gsectyellow
+                }
+            }
+        }
+    }
+    div.logout{
+        margin-top: 250px;
+        &:hover, &:active, &active{
+            border-left: 5px solid $gsectyellow;
+            color: $gsectyellow;
+            
+        }
+    }
 }

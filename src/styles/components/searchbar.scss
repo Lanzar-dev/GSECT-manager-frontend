@@ -2,9 +2,11 @@
 div.searchbar{
     width: 100%;
     max-width: 1163px;
-    height: 85px;
+    // height: 85px;
     background-color: $white;
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    background-color: $gsectblack;
+    margin-left: 277px;
 }
